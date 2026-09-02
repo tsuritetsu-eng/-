@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="アントロデンのWiki・遊び方・攻略ガイド。ダンジョン、敵モブ、ドロップ、洗礼システム、ワールド、ギルド、同盟、領地、要塞などをまとめています。" name="description"/>
+<meta content="アントロデン,アントロデン Wiki,アントロデン wiki,アントロデン 遊び方,アントロデン 攻略,アントロデン 敵モブ,アントロデン 敵,アントロデン ダンジョン,アントロデン 洗礼,アントロデン 洗礼システム,UNTRODDENT,UNTRODDENT GUIDE" name="keywords"/>
+<meta content="index,follow" name="robots"/>
+<meta content="index,follow" name="googlebot"/>
+<meta content="UNTRODDENT GUIDE" name="author"/>
+<meta content="website" property="og:type"/>
+<meta content="アントロデン Wiki・遊び方・攻略ガイド | UNTRODDENT GUIDE" property="og:title"/>
+<meta content="アントロデンの遊び方、ダンジョン、敵モブ、ギルド・同盟、領地・要塞などをまとめた攻略ガイド。" property="og:description"/>
+<meta content="https://untroddent.com/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<title>UNTRODDENT GUIDE - 実サイト画面・実測敵モブ情報 統合版</title>
+<style>
+:root{--bg:#08100d;--panel:#101b17;--panel2:#17251f;--line:#30463d;--text:#e9eee9;--muted:#a8b6ae;--gold:#e5b94f;--purple:#c6a6e8;--green:#8bd09a;--red:#d86b55}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#21352d 0,#0d1512 35%,#070b09 100%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;line-height:1.85}
+a{color:#f0cb6b}.wrap{max-width:1080px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:rgba(7,12,10,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+nav{max-width:1080px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:18px}.logo{font-weight:900;letter-spacing:.08em}.site-menu{margin-left:auto;position:relative}.site-menu summary{list-style:none;cursor:pointer;padding:8px 13px;border:1px solid var(--line);border-radius:9px;background:var(--panel2);font-weight:800;user-select:none}.site-menu summary::-webkit-details-marker{display:none}.site-menu-panel{position:absolute;right:0;top:calc(100% + 8px);width:min(320px,calc(100vw - 36px));max-height:calc(100vh - 90px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;display:grid;gap:4px;padding:10px;background:rgba(10,18,14,.98);border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 45px #0009;z-index:100}.site-menu-panel a{display:block;padding:9px 11px;border-radius:8px;text-decoration:none;color:var(--text)}.site-menu-panel>a:not(.chapter-subshortcut){color:#f0cb6b;font-weight:800}.site-menu-panel a:hover{background:var(--panel2);color:#f0cb6b}.site-menu-panel a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.hero{padding:65px 18px 45px;max-width:1080px;margin:auto}.badge{display:inline-block;padding:4px 11px;border:1px solid #665426;border-radius:999px;color:#f0cc70;background:#2a2417;font-size:.82rem}
+h1{font-size:clamp(2.1rem,6vw,4.4rem);line-height:1.08;margin:18px 0}h2{font-size:1.85rem;line-height:1.3;margin-top:0}h3{line-height:1.35}
+.lead{color:var(--muted);max-width:850px;font-size:1.06rem}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--text);text-decoration:none}.primary{background:var(--gold);color:#171309;border-color:#f0cb6b;font-weight:800}
+section{margin:52px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:18px}.card h3{margin-top:0}
+.small,.muted{color:var(--muted)}.notice{border-left:4px solid var(--gold);background:#242016;padding:14px 16px;border-radius:8px;margin:18px 0}.info{border-left-color:#71b6d1;background:#14232a}.danger{border-left-color:var(--red);background:#281716}
+.dungeon{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:18px;margin:16px 0}.rank{display:inline-block;border:1px solid #496354;background:#15231b;border-radius:999px;padding:2px 9px;color:#a8dfb2;font-size:.78rem}.rank.ex{border-color:#705a2d;background:#292316;color:#f0cf7b}.rank.boss{border-color:#75434a;background:#2a171a;color:#f1a4a4}
+.game-shot{background:#050806;border:1px solid #3a4d44;border-radius:16px;overflow:hidden;margin:22px 0;box-shadow:0 18px 45px #0008}
+.game-shot .titlebar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:linear-gradient(180deg,#18251f,#101915);border-bottom:1px solid var(--line);font-size:.8rem;letter-spacing:.05em;color:#aab8af}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#e5b94f;margin-right:7px}
+.game-shot img{display:block;width:100%;height:auto;background:#08100d}
+.caption{padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.callouts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0 26px}
+.callout{border:1px solid #a47d22;background:#18170f;border-radius:10px;padding:11px 12px;color:#ead89f;font-size:.88rem}
+.callout b{display:block;color:#f0ca62;margin-bottom:3px}
+.callouts.three{grid-template-columns:repeat(3,1fr)}
+.steps{display:grid;gap:13px}.step{display:grid;grid-template-columns:42px 1fr;gap:14px}.num{width:38px;height:38px;border-radius:10px;background:var(--gold);color:#161208;display:grid;place-items:center;font-weight:900}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line)}th,td{padding:11px 13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--panel2);color:#f0cc70}
+footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 18px;text-align:center;color:var(--muted)}
+@media(max-width:700px){.hero{padding-top:42px}.callouts,.callouts.three{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.callouts,.callouts.three{grid-template-columns:1fr}}
+
+.enemy-dungeon{margin:22px 0 30px;border:1px solid var(--line);background:var(--panel);border-radius:10px;overflow:hidden}
+.enemy-dungeon-head{padding:15px 17px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.enemy-dungeon-head h3{margin:0 0 7px;color:#f0cc70}
+.enemy-dungeon-head p{margin:4px 0}
+.enemy-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:14px}
+.enemy-card{border:1px solid var(--line);background:#0b1512;border-radius:9px;padding:13px}
+.enemy-card h4{margin:0 0 9px;color:#f0cc70;font-size:1.02rem}
+.enemy-card p{margin:6px 0}
+.enemy-card .enemy-label{color:var(--muted);font-size:.82rem}
+.enemy-card .drop{border-top:1px solid var(--line);margin-top:10px;padding-top:9px}.enemy-drop-item{padding:7px 0;border-bottom:1px dashed var(--line)}.enemy-drop-item:last-child{border-bottom:0}.enemy-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}.enemy-stat{background:#07100d;border:1px solid var(--line);border-radius:6px;padding:6px;text-align:center}.enemy-stat b{display:block;color:#f0cc70;font-size:.78rem}.enemy-stat span{font-weight:700}.drop-editor{border:1px solid var(--line);border-radius:8px;padding:8px}.drop-row{display:grid;grid-template-columns:1.4fr .7fr 2fr auto;gap:6px;margin-bottom:6px}.drop-row input{min-width:0}@media(max-width:700px){.drop-row{grid-template-columns:1fr 1fr}.enemy-stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.enemy-cards{grid-template-columns:1fr}}
+
+
+.pr-box{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:20px;margin:22px 0}
+.pr-box h3{margin-top:0;color:#f0cc70}
+.pr-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.pr-input{width:100%;max-width:680px;padding:11px 13px;border:1px solid var(--line);border-radius:9px;background:#0b1512;color:var(--text);font:inherit}
+.pr-input::placeholder{color:var(--muted)}
+.pr-status{margin-top:10px;color:var(--muted);font-size:.88rem}
+.pr-help{margin-top:13px;padding:12px 14px;border-left:4px solid #71b6d1;background:#14232a;border-radius:8px;font-size:.9rem}
+
+
+.pr-form{display:grid;gap:11px;margin-top:16px}
+.pr-form label{font-weight:700;color:var(--text)}
+.pr-form input,.pr-form textarea,.pr-form select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;background:#0b1512;color:var(--text);font:inherit}
+.pr-form textarea{min-height:140px;resize:vertical}
+.pr-preview{display:none;border:1px solid var(--line);background:#0b1512;border-radius:9px;padding:14px;margin-top:10px;white-space:pre-wrap}
+.history-list{display:grid;gap:12px}
+.history-item{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:15px}
+.history-item h3{margin:0 0 5px;color:#f0cc70}
+.history-meta{font-size:.82rem;color:var(--muted);margin-bottom:7px}
+
+
+.github-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--line);border-radius:999px;background:#0b1512;color:#e9eee9;font-weight:700;font-size:.82rem}
+
+
+.admin-gate{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:20px;margin:20px 0}
+.admin-panel{display:none!important}
+.admin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.admin-card{border:1px solid var(--line);background:#0b1512;border-radius:10px;padding:15px}
+.admin-card h3{margin-top:0;color:#f0cc70}
+.admin-field{display:grid;gap:6px;margin:10px 0}
+.admin-field label{font-size:.86rem;color:var(--muted)}
+.admin-field input,.admin-field textarea,.admin-field select{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#101c18;color:var(--text);font:inherit}
+.admin-field textarea{min-height:110px;resize:vertical}
+.admin-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.admin-status{margin-top:10px;padding:10px;border-radius:8px;background:#14231e;color:var(--muted);white-space:pre-wrap}
+.admin-warning{border-left:4px solid #d6a84f;background:#2a2416;padding:12px;margin:12px 0;border-radius:7px}
+.admin-history-row{display:grid;grid-template-columns:120px 1fr auto;gap:8px;margin:8px 0}
+@media(max-width:700px){.admin-grid{grid-template-columns:1fr}.admin-history-row{grid-template-columns:1fr}}
+
+
+.crud-wrap{margin-top:20px}
+.crud-toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.crud-toolbar input,.crud-toolbar select{padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#101c18;color:var(--text);font:inherit}
+.crud-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+.crud-table{width:100%;border-collapse:collapse;min-width:760px}
+.crud-table th,.crud-table td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.crud-table th{background:#14231e;color:#f0cc70}
+.crud-table tr:last-child td{border-bottom:0}
+.crud-table .crud-actions{white-space:nowrap}
+.crud-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:9999;align-items:center;justify-content:center;padding:18px}
+.crud-modal.open{display:flex}
+.crud-dialog{width:min(760px,100%);max-height:92vh;overflow:auto;background:#101c18;border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+.crud-dialog h3{margin-top:0;color:#f0cc70}
+.crud-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.crud-grid .full{grid-column:1/-1}
+.crud-danger{border-color:#9b5d5d!important}
+.crud-empty{padding:20px;text-align:center;color:var(--muted)}
+@media(max-width:700px){.crud-grid{grid-template-columns:1fr}.crud-grid .full{grid-column:auto}}
+
+
+.dungeon-crud-wrap{margin-top:20px}
+.dungeon-crud-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+.dungeon-crud-table{width:100%;border-collapse:collapse;min-width:820px}
+.dungeon-crud-table th,.dungeon-crud-table td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.dungeon-crud-table th{background:#14231e;color:#f0cc70}
+.dungeon-crud-table tr:last-child td{border-bottom:0}
+.dungeon-crud-actions{white-space:nowrap}
+
+
+.sortable-enemy-table tbody tr{cursor:grab}
+.sortable-enemy-table tbody tr.dragging{opacity:.45}
+.sortable-handle{cursor:grab;font-size:1.1rem}
+.image-preview{display:flex;align-items:center;gap:12px;margin-top:8px}
+.image-preview img{width:72px;height:72px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.image-preview span{font-size:.82rem;color:var(--muted);word-break:break-all}
+.image-upload-box{border:1px dashed var(--line);padding:12px;border-radius:10px;background:#0b1512}
+.enemy-thumb{width:42px;height:42px;object-fit:cover;border-radius:7px;vertical-align:middle;margin-right:8px;border:1px solid var(--line)}
+.gallery-admin{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.gallery-admin-card{border:1px solid var(--line);border-radius:10px;padding:10px;background:#0b1512;display:flex;flex-direction:column;gap:7px}
+.gallery-admin-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:7px}.gallery-admin-card.no-image{min-height:120px;justify-content:center}.gallery-admin-card .enemy-card-actions{display:flex;gap:6px;flex-wrap:wrap}.gallery-admin-card .enemy-card-actions .btn{flex:1;min-width:70px;padding:6px 8px;font-size:.85rem}
+.gallery-admin-card .viewer-detail{font-size:.82rem;line-height:1.45;color:var(--muted)}
+.gallery-admin-card .viewer-detail b{color:var(--text)}
+
+</style>
+<style id="collapsible-dungeon-enemy-css">
+/* ダンジョン別敵図鑑（ダンジョンごとに開閉できます）：折りたたみ表示 */
+.enemy-dungeon-collapsible{margin:22px 0 30px;border:1px solid var(--line);background:var(--panel);border-radius:10px;overflow:hidden}
+.enemy-dungeon-collapsible>summary{list-style:none;cursor:pointer;padding:15px 17px;background:var(--panel2);border-bottom:1px solid var(--line);user-select:none}
+.enemy-dungeon-collapsible>summary::-webkit-details-marker{display:none}
+.enemy-dungeon-collapsible>summary:before{content:'▶';display:inline-block;margin-right:9px;transition:transform .18s ease;color:#f0cc70}
+.enemy-dungeon-collapsible[open]>summary:before{transform:rotate(90deg)}
+.enemy-dungeon-collapsible .enemy-dungeon-summary h3{display:inline;margin:0;color:#f0cc70}
+.enemy-dungeon-collapsible .enemy-dungeon-summary p{margin:5px 0 0}
+.enemy-dungeon-collapsible .enemy-dungeon-body{padding:0 17px 17px}
+.enemy-dungeon-collapsible .enemy-cards{padding-top:17px}
+.enemy-dungeon-collapsible .enemy-count{float:right;font-size:.85em;opacity:.8}
+/* 既存管理カードの見た目を保ったまま、機能ごとに開閉するための最小限の追加スタイル */
+.admin-section{margin-top:20px}.admin-section>summary{list-style:none;cursor:pointer}.admin-section>summary::-webkit-details-marker{display:none}.admin-section>summary .admin-card{margin:0}.admin-section>summary .admin-card h3{margin:0}.admin-section>summary .admin-card h3:after{content:' ▸';font-size:.92em}.admin-section[open]>summary .admin-card h3:after{content:' ▾'}.admin-section-body{padding-top:14px}.admin-section-body>.admin-card{margin:0}.admin-section-body>.dungeon-crud-wrap,.admin-section-body>.crud-wrap{margin-top:0}#publicVisitorCount iframe{width:92px;height:20px;border:0;vertical-align:middle}
+</style>
+<style id="chapter-structure-css">.guide-chapter{margin-top:38px}.guide-chapter>h2{margin-bottom:24px;color:#f0cb6b;font-weight:800}.guide-chapter>section:first-of-type{margin-top:0}</style></head>
+<body>
+<header><nav><div class="logo">UNTRODDENT GUIDE</div><details class="site-menu"><summary>☰ メニュー</summary><div class="site-menu-panel"><a href="#chapter1">1章. ダンジョンでの戦闘</a><a class="chapter-subshortcut" href="#dungeons">　1. ダンジョン5種類</a><a class="chapter-subshortcut" href="#screens">　2. 実際のゲーム画面で操作を覚える</a><a href="#chapter2">2章. ダンジョンの敵の武器</a><a class="chapter-subshortcut" href="#encyclopedia">　1. ダンジョン別・敵・ドロップ品カード図鑑</a><a class="chapter-subshortcut" href="#drop">　2. ドロップ・報酬を見る場所</a><a href="#chapter3">3章. ギルドシステムと領地</a><a class="chapter-subshortcut" href="#guild">　1. ギルド・同盟の使い方</a><a class="chapter-subshortcut" href="#fortress">　2. 要塞・領地の読み方</a><a href="#chapter4">4章. 洗礼とアイテム強化</a><a class="chapter-subshortcut" href="#baptism">　1. 洗礼システム</a><a class="chapter-subshortcut" href="#item-systems">　2. アイテム・強化・合成システム</a><a href="#chapter5">5章. その他</a><a class="chapter-subshortcut" href="#paid-items">　1. 課金アイテム</a><a class="chapter-subshortcut" href="#progress">　2. 初心者のおすすめ進行</a><a href="#history">更新履歴</a><a href="#developer-admin">開発者管理画面</a></div></details></nav></header>
+<div class="hero">
+<span class="badge">実画面チュートリアル・クリーン表示版</span>
+<h1>実際のゲーム画面で<br/>アントロデンを覚える</h1>
+<div class="buttons"><a class="btn primary" href="https://untroddent.com" target="_blank">ゲームを開く</a><a class="btn" href="#screens">実画面チュートリアル ↓</a></div>
+</div>
+<main class="wrap">
+<div class="guide-chapter" id="chapter1"><h2>1章. ダンジョンでの戦闘</h2><section id="dungeons"><h2>1. ダンジョン5種類</h2><p class="muted">攻略が簡単な順に、ビギナー → ノービス → ホーリー → エキスパート → アンドロデンと覚えます。</p><div class="dungeon" data-dungeon-id="d1"><h3><span class="rank">★1</span> ビギナーダンジョン</h3><p>序盤向けのダンジョン。<br/><b>系統効果：</b>ドロップ率の分母が1減る</p><p class="small"><b>攻略：</b>基本的な敵から戦闘に慣れる。</p></div><div class="dungeon" data-dungeon-id="d2"><h3><span class="rank">★2</span> ノービスダンジョン</h3><p>ビギナーから一段階上のダンジョン。<br/><b>系統効果：</b>獲得ゴールドが15%上がる</p><p class="small"><b>攻略：</b>敵の攻撃を見ながら各個撃破する。</p></div><div class="dungeon" data-dungeon-id="d3"><h3><span class="rank">★3</span> ホーリーダンジョン</h3><p>経験値稼ぎにも向くダンジョン。<br/><b>系統効果：</b>獲得ガウルがたまに1増える</p><p class="small"><b>攻略：</b>敵の属性や特殊攻撃に注意する。</p></div><div class="dungeon" data-dungeon-id="d4"><h3><span class="rank ex">★4</span> エキスパートダンジョン</h3><p>高難度のダンジョン。<br/><b>系統効果：</b>経験値が2倍になる</p><p class="small"><b>攻略：</b>強力な敵への対策を準備する。</p></div><div class="dungeon" data-dungeon-id="d5"><h3><span class="rank boss">★5</span> アンドロデンダンジョン</h3><p>最上位クラスのダンジョン。<br/><b>系統効果：</b>なし</p><p class="small"><b>攻略：</b>ボス戦を想定した装備と編成を準備する。</p></div><table><tbody><tr><th>種類</th><th>敵</th><th>攻略の位置づけ</th><th>系統効果</th></tr><tr><td>ビギナー</td><td data-dungeon-enemies="d1">スライム、くろいコウモリ、しろいコウモリ、モルモットっぽいねこ、馬刺しになるはずだった馬、こわれたロボット</td><td>基本的な敵から戦闘に慣れる。</td><td>ドロップ率の分母が1減る</td></tr><tr><td>ノービス</td><td data-dungeon-enemies="d2">ふとったいぬ、ツタンカー麺、マリーアンドネット、歩く死体、船の船長、船員</td><td>敵の攻撃を見ながら各個撃破する。</td><td>獲得ゴールドが15%上がる</td></tr><tr><td>ホーリー</td><td data-dungeon-enemies="d3">パラディン、英雄アーサー、雷神ソー</td><td>敵の属性や特殊攻撃に注意する。</td><td>獲得ガウルがたまに1増える</td></tr><tr><td>エキスパート</td><td data-dungeon-enemies="d4">レッドドラゴン、ブルードラゴン、ホワイトドラゴン、ブラックドラゴン、ゴーストドラゴン</td><td>強力な敵への対策を準備する。</td><td>経験値が2倍になる</td></tr><tr><td>アンドロデン</td><td data-dungeon-enemies="d5">縺ｫ繧?メ繝オル</td><td>ボス戦を想定した装備と編成を準備する。</td><td>なし</td></tr></tbody></table></section><section id="screens">
+<h2>2. 実際のゲーム画面で操作を覚える</h2>
+<p>画像は端末のステータスバー・ブラウザUIを取り除き、ゲーム画面だけを独立したゲームUIとして見せています。説明枠は画像の外に配置して、ゲーム内の文字を隠さない構成にしました。</p>
+<div class="game-shot">
+<div class="titlebar"><span><span class="dot"></span>DUNGEON / GAME VIEW</span><span>実サイト・選択画面</span></div>
+<img alt="実サイトのダンジョン選択画面" src="assets/dungeon-selection.webp"/>
+<div class="caption">実サイトで確認したダンジョン選択画面。中央のマップ、選択欄、挑戦ボタンをそのまま示します。</div>
+</div>
+<div class="callouts">
+<div class="callout"><b>① ダンジョン</b>ビギナーダンジョンなど、挑戦する種類を選択。</div>
+<div class="callout"><b>② ダンジョンLv</b>挑戦するレベルを選択。</div>
+<div class="callout"><b>③ 魔法の方針</b>魔法を使う条件・方針を確認。</div>
+<div class="callout"><b>④ 挑む</b>準備ができたら戦闘を開始。</div>
+</div>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><b>ダンジョンを選択</b><br/><span class="muted">画像では「ビギナーダンジョン」。種類を切り替えて攻略先を選びます。</span></div></div>
+<div class="step"><div class="num">2</div><div><b>ダンジョンLvを選択</b><br/><span class="muted">画像ではLv9。種類とLvをセットで確認します。</span></div></div>
+<div class="step"><div class="num">3</div><div><b>魔法の方針を確認</b><br/><span class="muted">画像では「ゲージが満ちたら撃つ」。戦闘前に設定します。</span></div></div>
+<div class="step"><div class="num">4</div><div><b>「挑む」</b><br/><span class="muted">金色の大きなボタンから挑戦します。</span></div></div>
+</div>
+<div class="game-shot">
+<div class="titlebar"><span><span class="dot"></span>NOVICE DUNGEON / GAME VIEW</span><span>実サイト・戦闘画面</span></div>
+<img alt="実サイトの戦闘画面" src="data:image/webp;base64,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"/>
+<div class="caption">実サイトのビギナーダンジョンLV 1で、こわれたロボットが出現した戦闘画面です。敵イラストとHPバーは加工していません。</div>
+</div>
+<div class="callouts three">
+<div class="callout"><b>① ノービスダンジョン</b>ビギナーの次の攻略先。</div>
+<div class="callout"><b>② Lv3</b>ダンジョンLvも同時に確認。</div>
+<div class="callout"><b>③ 戦闘ログ</b>制覇・ガウル・経験値などを記録。</div>
+</div>
+<div class="notice info"><b>攻略のコツ：</b>ダンジョン欄の下には、判定・戦闘間隔・系統効果などの情報があります。挑戦前にここまで読むと、報酬や条件を把握しやすくなります。</div>
+</section></div><div class="guide-chapter" id="chapter2"><h2>2章. ダンジョンの敵の武器</h2><section id="encyclopedia">
+<h2>1. ダンジョン別・敵・ドロップ品カード図鑑</h2>
+<p class="muted">敵カードには、各モブの固有スキル、ドロップ品、ドロップ率、効果詳細を表示します。</p><p class="muted"><b>ダンジョン別獲得経験値：</b>ビギナー 1,620 XP ／ ノービス 4,860 XP ／ ホーリー 16,200 XP ／ エキスパート 36,450 XP ／ アントロデン 24,350 XP</p>
+<div id="viewerEnemyDungeonList"><details class="enemy-dungeon-collapsible" data-dungeon-id="d1" open=""><summary><div class="enemy-dungeon-summary"><span class="{cls}">{rank}</span> <h3>{title}</h3><span class="enemy-count">{len(es)}体</span><p><b>系統効果：</b>{esc(effect)}</p><p class="small">{esc(desc)}</p><p class="small"><b>攻略：</b>{esc(strategy)}</p></div></summary><div class="enemy-dungeon-body"><div class="enemy-cards"><div class="enemy-card"><h4>スライム</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>スライムマント</b> <span>（1/3）</span><br/><span class="small">【防具】DEF+20 やわらかいマント（効果なし）</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>90</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>くろいコウモリ</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>くろいヘルメット</b> <span>（1/5）</span><br/><span class="small">【防具】DEF+50 坑道でも怖くない（効果なし）</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>90</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>しろいコウモリ</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>あかるいライト</b> <span>（1/8）</span><br/><span class="small">【武器】ATK+20。1ターンごとに1/15の確率で敵を行動不能にする。強化値ごとに1/(15-0.5×強化値)の確率で相手を麻痺させる。1/3が上限。</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>90</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>モルモットっぽいねこ</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>爪とひげ</b> <span>（1/5）</span><br/><span class="small">【武器】ATK+50 するどい爪とひげ（効果なし）</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>90</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>馬刺しになるはずだった馬</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b>—</div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>126</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>こわれたロボット</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>スタンガン</b> <span>（1/6）</span><br/><span class="small">【武器】ATK+150 『ボル○ッカー』。1ターンごとに1/10の確率で敵全体に攻撃。強化値に確率は依存しない。</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>144</span></div></div><p class="small"><b>攻略：</b>—</p></div></div></div></details><details class="enemy-dungeon-collapsible" data-dungeon-id="d2"><summary><div class="enemy-dungeon-summary"><span class="{cls}">{rank}</span> <h3>{title}</h3><span class="enemy-count">{len(es)}体</span><p><b>系統効果：</b>{esc(effect)}</p><p class="small">{esc(desc)}</p><p class="small"><b>攻略：</b>{esc(strategy)}</p></div></summary><div class="enemy-dungeon-body"><div class="enemy-cards"><div class="enemy-card"><h4>ふとったいぬ</h4><p class="enemy-label">固有スキル</p><p>【ステータス？くれてやる。】発動率1/1。ランダムでプレイヤーのステータスのどれかが1~20上がる。</p><div class="drop"><b>ドロップ：</b>—</div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>161</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>ツタンカー麺</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>どんぶり</b> <span>（1/15）</span><br/><span class="small">【装身具】獲得ゴールドが2倍になる</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>230</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>マリーアンドネット</h4><p class="enemy-label">固有スキル</p><p>【私と一緒に踊りましょう】スキル発動率1/10。獲得ゴールドが1.5倍になる。</p><div class="drop"><b>ドロップ：</b>—</div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>—</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>歩く死体</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b>—</div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>230</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>船の船長</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>救命胴衣</b> <span>（1/20）</span><br/><span class="small">【防具】DEF+500 これを着て（効果はなし）</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>345</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>船員</h4><p class="enemy-label">固有スキル</p><p>—</p><div class="drop"><b>ドロップ：</b>—</div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>230</span></div></div><p class="small"><b>攻略：</b>—</p></div></div></div></details><details class="enemy-dungeon-collapsible" data-dungeon-id="d3"><summary><div class="enemy-dungeon-summary"><span class="{cls}">{rank}</span> <h3>{title}</h3><span class="enemy-count">{len(es)}体</span><p><b>系統効果：</b>{esc(effect)}</p><p class="small">{esc(desc)}</p><p class="small"><b>攻略：</b>{esc(strategy)}</p></div></summary><div class="enemy-dungeon-body"><div class="enemy-cards"><div class="enemy-card"><h4>パラディン</h4><p class="enemy-label">固有スキル</p><p>【詠唱】スキル発動率1/1。相手に魔法ダメージ</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>魔術師のコート</b> <span>（1/35）</span><br/><span class="small">【防具】DEF+3000。一度体力が全体ステータスの30％以下になった時、全回復する。</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>1,100</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>英雄アーサー</h4><p class="enemy-label">固有スキル</p><p>【剣の奏でるハーモニー】スキル発動率1/1。相手に物理ダメージ</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>エクスカリバー</b> <span>（1/333）</span><br/><span class="small">【武器】ATK+7777。1ターン目に自分に英雄状態を付与した後、1/(17-1×強化値)（最大1/1）の確率で相手の最大HPを（最大HPの50〜50＋強化値×3）の中のランダムなパーセントで（最大95％）削る。どんな手段でも相手はこれを回復できない。削られた分の相手のHPバーは白黒で削られる。また、英雄状態を解かれると、相手のHPを削ることはできない。</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>2,640</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>雷神ソー</h4><p class="enemy-label">固有スキル</p><p>【怒りのいかづち】1/5の確率で即死</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>ムジョルニア</b> <span>（1/100）</span><br/><span class="small">【武器】ATK+8000。全体攻撃になる。また、1/9の確率で雷を呼び起こし敵全体に大ダメージ、また、英雄状態を解くことができる。</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>2,200</span></div></div><p class="small"><b>攻略：</b>—</p></div></div></div></details><details class="enemy-dungeon-collapsible" data-dungeon-id="d4"><summary><div class="enemy-dungeon-summary"><span class="{cls}">{rank}</span> <h3>{title}</h3><span class="enemy-count">{len(es)}体</span><p><b>系統効果：</b>{esc(effect)}</p><p class="small">{esc(desc)}</p><p class="small"><b>攻略：</b>{esc(strategy)}</p></div></summary><div class="enemy-dungeon-body"><div class="enemy-cards"><div class="enemy-card"><h4>レッドドラゴン</h4><p class="enemy-label">固有スキル</p><p>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>炎の翼</b> <span>（1/30）</span><br/><span class="small">合成素材</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>3,200</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>ブルードラゴン</h4><p class="enemy-label">固有スキル</p><p>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>氷の翼</b> <span>（1/30）</span><br/><span class="small">合成素材</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>3,200</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>ホワイトドラゴン</h4><p class="enemy-label">固有スキル</p><p>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>光の翼</b> <span>（1/30）</span><br/><span class="small">合成素材</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>3,200</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>ブラックドラゴン</h4><p class="enemy-label">固有スキル</p><p>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>闇の翼</b> <span>（1/30）</span><br/><span class="small">合成素材</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>3,200</span></div></div><p class="small"><b>攻略：</b>—</p></div><div class="enemy-card"><h4>ゴーストドラゴン</h4><p class="enemy-label">固有スキル</p><p>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>ドラゴンのたましい</b> <span>（1/50）</span><br/><span class="small">合成素材</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>4,480</span></div></div><p class="small"><b>攻略：</b>—</p></div></div></div></details><details class="enemy-dungeon-collapsible" data-dungeon-id="d5"><summary><div class="enemy-dungeon-summary"><span class="{cls}">{rank}</span> <h3>{title}</h3><span class="enemy-count">{len(es)}体</span><p><b>系統効果：</b>{esc(effect)}</p><p class="small">{esc(desc)}</p><p class="small"><b>攻略：</b>{esc(strategy)}</p></div></summary><div class="enemy-dungeon-body"><div class="enemy-cards"><div class="enemy-card"><h4>縺ｫ繧?メ繝オル</h4><p class="enemy-label">固有スキル</p><p>【ドッペルゲンガー】自分と全く同じステータスの敵になる。</p><div class="drop"><b>ドロップ：</b><div class="enemy-drop-item"><b>チタンのペンダント</b> <span>（1/99）</span><br/><span class="small">【装身具】洗礼された数だけ強くなる。（1.1の(洗礼回数)乗分、全ステータスが強化される）</span></div></div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>300</span></div></div><p class="small"><b>攻略：</b>—</p></div></div></div></details></div><div class="notice info" style="margin-top:14px">
+<b>統合表示：</b>「ダンジョン別敵図鑑」と「敵・ドロップ品カード」を分離せず、各ダンジョンの中に敵カード、その中に全ドロップ品をまとめています。
+</div>
+<h3 style="margin-top:30px">敵データ早見表</h3>
+<table>
+<tbody><tr><th>敵カテゴリ</th><th>出現ダンジョン</th><th>難度</th><th>確認できている特徴</th></tr>
+<tr><td>一般的な敵</td><td>ビギナー / ノービス / ホーリー</td><td>★〜★★★</td><td>通常攻略・周回向け</td></tr>
+<tr><td>竜など</td><td>エキスパート</td><td>★★★★</td><td>強敵。上位装備・能力を整えて挑戦</td></tr>
+<tr><td>正体不明のボス</td><td>アンドロデン</td><td>★★★★★</td><td>ボス戦。詳細はゲーム内で確認</td></tr>
+</tbody></table>
+<div class="notice info" style="margin-top:14px">
+<b>カード表示について：</b>「ドロップアイテムが存在しない」、「未確認」の箇所は「＿」などで表示しています。
+</div>
+</section><section id="drop">
+<h2>2. ドロップ・報酬を見る場所</h2>
+<div class="grid">
+<div class="card"><h3>通常報酬</h3><p>戦闘ログに表示されるガウル・経験値などを確認します。</p></div>
+<div class="card"><h3>レアドロップ</h3><p>アイテム名がログに現れたら、倉庫と合わせて確認。欲しいアイテムの周回記録を残します。</p></div>
+<div class="card"><h3>周回</h3><p>ダンジョンLvと報酬をセットで記録すると、どこを回るべきか比較しやすくなります。</p></div>
+</div>
+</section></div><div class="guide-chapter" id="chapter3"><h2>3章. ギルドシステムと領地</h2><section id="guild">
+<h2>1. ギルド・同盟の使い方</h2>
+<p>ギルドは、プレイヤーが所属してチャット・ギルド戦・砦・領地を共有するための単位です。ゲーム画面上部の「ギルド」から一覧を開けます。市場・郵便・ギルド・ワールドは全プレイヤーで共有されています。チャットには「全体」「王国」「取引」「ギルド」「DM」の5チャンネルが用意されています。</p>
+<div class="game-shot">
+<div class="titlebar"><span><span class="dot"></span>GUILD / LIST VIEW</span><span>公式ゲーム・ログイン後</span></div>
+<img alt="公式ゲームのログイン後ギルド一覧画面" src="assets/official-guild-menu.webp"/>
+<div class="caption">ギルド一覧では、ギルド名、ギルドLv、在籍人数／定員、申請制かどうか、戦功、マスター名、加入または申請ボタンを確認できます。</div>
+</div>
+<div class="grid">
+<div class="card"><h3>ギルド一覧で読める情報</h3><p><b>定員：</b>定員は30人です。各行に「Lv18 7/30」のように、ギルドLvと現在人数／定員が並びます。<br/><b>加入方式：</b>「申請なし（誰でも加入）」は加入ボタン、「申請あり（承認制）」は申請ボタンです。<br/><b>戦功とマスター：</b>戦功の合計値とマスター名が各ギルドに表示されます。</p></div>
+<div class="card"><h3>ギルドレベルについて</h3>
+<p>ギルドのレベルを上げることでギルド所属のメンバーにバフが付きます。レベルはダンジョン等の戦闘で得られるゴールドを用いて最大20レベルまであげることができます。レベルを上げるのに必要な累計ゴールド数は次の表のとおりです。</p>
+<details class="enemy-dungeon-collapsible">
+<summary><div class="enemy-dungeon-summary"><h3>ギルドレベル別・累計寄付ゴールド表</h3><p>クリックして表を表示</p></div></summary>
+<div class="enemy-dungeon-body"><div class="game-shot">
+<div class="titlebar"><span><span class="dot"></span>GUILD LEVEL / DONATION TABLE</span><span>ギルドレベル一覧</span></div>
+<img alt="ギルドレベルごとの累計寄付ゴールド表" src="assets/guild-level-gold-table-cropped.jpeg"/>
+</div></div>
+</details>
+</div>
+<div class="card"><h3>ギルドを作る</h3><p>ギルド一覧の下部には「ギルドを作る」欄があり、16文字までのギルド名と、<b>申請なし／申請あり（承認制）</b>を選んで設立します。表示名や加入方式は、設立前に誤りがないか確認してください。</p></div>
+<div class="card"><h3>ギルドチャット</h3><p>画面のチャットチャンネルで「ギルド」を選ぶと、所属ギルド向けに連絡できます。集合座標、攻撃対象、砦の耐久、修復担当など、全体チャットに出す必要のない作戦情報の共有に使います。</p></div>
+</div>
+<h3>同盟システム</h3>
+<p>同盟はギルド間で結ぶ外交関係です。公式ゲームの実装上、同盟はギルド名を指定して申し込み、期間を<strong>1〜30日</strong>で設定します。相手側が承認すると成立し、申請中は取り下げ／却下、成立後は双方の合意による早期解消が可能です。相手ギルドの承認が必要な操作と、マスター等の権限が必要な操作があるため、ボタンが表示されない場合は権限または状態を確認します。</p>
+<h3>ギルド／同盟の実戦チェックリスト</h3>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><b>ギルド一覧で条件を比較</b><br/>ギルドLv、在籍人数／30人、申請制、戦功、マスターを確認し、自分のプレイ方針に合うギルドを選びます。</div></div>
+<div class="step"><div class="num">2</div><div><b>加入または申請</b><br/>自由加入なら「加入」、承認制なら「申請」。加入後はギルドチャットが利用できる状態か確認します。</div></div>
+<div class="step"><div class="num">3</div><div><b>同盟相手と期間を合意</b><br/>相手ギルド名を指定し、1〜30日の期間を決めて申請。相手の承認後に成立するため、期間と目的をチャットで共有します。</div></div>
+<div class="step"><div class="num">4</div><div><b>砦・領地の作戦を共有</b><br/>座標、地形、占領状態、建設可否、砦の耐久を記録し、ギルド内と同盟先へ必要な範囲だけ伝えます。</div></div>
+</div>
+</section><section id="fortress">
+<h2>2. 要塞・領地の読み方</h2>
+<p>ワールド画面には、座標入力と移動、ミニマップ、凡例、世界大戦の占領率と次回までの時間、そして「王宮」「自要塞」「建設」「領地」「戻る」の操作があります。マップ上の土地をタップすると詳細パネルが開き、地形、王宮までの距離、建設可否、効果、占領・進軍などの操作ができます。</p>
+<div class="game-shot">
+<div class="titlebar"><span><span class="dot"></span>GUILD / WORLD MAP VIEW</span><span>公式ゲーム・ログイン後</span></div>
+<img alt="公式ゲームの領地・要塞ワールドマップ" src="assets/guild-territory-map.jpg"/>
+<div class="caption">公式ゲームのワールドマップ画面。上部の座標・地形・占領率、中央の王宮・要塞・地形、右側のチャット・凡例・ズーム、下部の「王宮」「自要塞」「建設」「領地」「戻る」を確認できます。</div>
+</div>
+<div class="card">
+<h3>砦と領地の詳細メモ</h3>
+<ul>
+<li><b>自要塞：</b>公式更新欄には「砦をギルドに1つへ一本化」「個人要塞は撤去」「自ギルドの砦から敵の城へ進軍」とあります。現在はギルド単位の砦を基準に読むのが安全です。</li>
+<li><b>敵の城を探す：</b>ギルドボタン内のギルド一覧から相手の砦を探すことができます。ギルド一覧から対象を探し、ワールドへ移動する導線として使えます。</li>
+<li><b>領地・修復：</b>自分の陣地をタップすれば修復することができます。自分側の領地・砦をタップして詳細と修復操作を確認できます。</li>
+<li><b>座標：</b>ワールドUIの初期表示はX:256 Y:256、X/Yは0〜511の入力範囲です。</li>
+<li><b>建設：</b>「建設」から建設モードに入り、対象土地の詳細で建設可否を確認してから「ここに建てる」を実行します。不可地形や既存施設などの情報も表示されます。</li>
+<li><b>進軍：</b>自ギルドの砦から出撃し、移動は「1マス5秒」、途中で敵の占領地に入ると戦闘になります。</li>
+</ul>
+</div>
+<div class="notice danger"><b>重要：</b>占領率や戦功の意味、同盟中の補正、役職別の建設・進軍権限はアップデートで変わる可能性があります。Wikiでは、現在のゲーム画面に表示された値と公式更新欄を優先し、古い攻略情報を固定値として扱わないでください。</div>
+</section></div><div class="guide-chapter" id="chapter4"><h2>4章. 洗礼とアイテム強化</h2><section id="baptism">
+<h2>1. 洗礼システム</h2>
+<p class="muted">洗礼は、プレイヤーの成長を次の段階へ進めるためのシステムです。洗礼回数に応じてダンジョンLVや最大プレイヤーレベルなどが変化します。</p>
+<div class="grid">
+<div class="card"><h3>ダンジョンLV</h3><p>洗礼回数に応じて最大ダンジョンレベルが上昇します。最大レベルは「20×洗礼回数＋50」。洗礼後は「20×洗礼回数」LVのダンジョンから挑戦できます。バトル終了時には、ダンジョンレベルに応じた経験値倍率が適用されます。</p></div>
+<div class="card"><h3>最大プレイヤーレベル</h3><p>基本の最大レベルは10万レベル。洗礼するごとに最大レベルが1万レベルずつ上昇します。</p></div>
+<div class="card"><h3>必要経験値</h3><p>洗礼回数が増えるほど必要経験値量は増加します。一方、5回目・10回目・20回目の洗礼後は、必要経験値量が比較的少なくなるとされています。</p></div>
+<div class="card"><h3>固有スキル</h3><p>洗礼するたびに固有スキルがランダムで与えられます。別の固有スキルに変更したい場合は、再洗礼券が必要です。</p></div>
+<div class="card"><h3>洗礼条件</h3><p>最大レベルの70％まで到達することが条件です。70％から100％までは約2.5倍の経験値が必要とされています。</p></div>
+<div class="card"><h3>ステータス引き継ぎ</h3><p>洗礼後は、これまでの合計レベルの1/100だけ、全ステータスが引き継がれます。</p></div>
+</div>
+<div class="notice info"><b>ゲーム内確認：</b>アントロデン本体には「洗礼」ボタンがあり、ダンジョン選択・レベル選択などと並ぶゲーム機能として表示されています。</div>
+</section><section id="item-systems">
+<h2>2. アイテム・強化・合成システム</h2>
+<p>アイテムはダンジョンのドロップや合成、ショップなどから入手します。強化値や合成素材を確認し、装備の成長と素材集めを計画しましょう。</p>
+<div class="grid">
+<div class="card"><h3>強化</h3><p>同じ強化値のアイテムを2つ合わせることで、強化値を1段階上げられます。成功率は<strong>（100 − 強化値 × 5）％</strong>です。強化後のATKまたはDEFは、無強化時の値に<strong>（強化値＋1）</strong>を掛けた値になります。</p></div>
+<div class="card"><h3>合成</h3><p>指定された合成素材を集めることで実行できます。成功率は<strong>10％</strong>です。素材の種類と必要数をそろえてから挑戦します。</p><p><strong>＊ただし、合成素材の翼系アイテムは獲得しても倉庫には入らず、店で合成することができます。</strong></p></div>
+<div class="card"><h3>ドラゴンソウル</h3><p><strong>DEF＋9999</strong>の装備です。ショップで<strong>3000ガウル</strong>で購入できますが、ドラゴン系の素材を1つずつ集めることが必要です。</p></div>
+</div>
+<div class="notice info"><b>素材集めの目安：</b>エキスパートでは炎の翼、氷の翼、光の翼、闇の翼、ドラゴンのたましいが合成素材としてドロップします。合成やドラゴンソウル購入を目指す場合は、必要素材を倉庫で確認しながら周回します。</div>
+</section></div><div class="guide-chapter" id="chapter5"><h2>5章. その他</h2><section id="paid-items">
+<h2>1. 課金アイテム</h2>
+<p class="muted">ゲームを攻略するのに有利な課金アイテムの一覧です。</p>
+<div class="grid">
+<div class="card"><h3>行動時間半減券</h3><p><b>効果：</b>一定期間、行動時間を半減します。</p></div>
+<div class="card"><h3>バリアチャージャー</h3><p><b>効果：</b>一定期間、行動時間を半減し、バリアチャージ効果を得ます。</p></div>
+<div class="card"><h3>ガレージクラフト</h3><p><b>効果：</b>倉庫の上限を20増やします。</p></div>
+<div class="card"><h3>アントロデンプレミアム（1ヶ月）</h3><p><b>効果：</b>30日間、ギルド戦の行軍時間が半分になり、自動戦闘（1回1分）が使えるようになります。戦闘の待機時間は10秒から5秒になります。郵便で届きます。</p></div>
+<div class="card"><h3>保釈券</h3><p><b>効果：</b>捕虜収容所から抜け出せます。ギルドの仲間を助け出すこともできます。郵便で届きます。</p></div>
+<div class="card"><h3>呪い解除券</h3><p><b>効果：</b>処刑で受けた呪い（世界大戦中に全ステータス30％減）を消します。郵便で届きます。</p></div>
+</div>
+</section><section id="progress">
+<h2>2. 初心者のおすすめ進行</h2>
+<div class="grid">
+<div class="card"><h3>STEP 1</h3><p>ビギナーで操作を覚える</p></div>
+<div class="card"><h3>STEP 2</h3><p>ノービス → ホーリー</p></div>
+<div class="card"><h3>STEP 3</h3><p>戦闘ログ・ガウル・経験値・アイテムを確認</p></div>
+<div class="card"><h3>STEP 4</h3><p>エキスパートで竜などに挑戦</p></div>
+<div class="card"><h3>STEP 5</h3><p>アンドロデンのボス攻略を目指す</p></div>
+<div class="card"><h3>STEP 6</h3><p>ワールド・領地・要塞を覚える</p></div>
+</div>
+</section></div>
+</main>
+<section id="history">
+<h2>更新履歴</h2>
+<p class="muted">チュートリアルサイトの更新内容を、開発者がここに追記して閲覧者へ公開できます。</p>
+<div class="history-list"><div class="history-item"><h3>V8.0</h3><div class="history-meta">2026-08-27</div><div>敵カードなど色々アップデート</div></div><div class="history-item"><h3>V8.0</h3><div class="history-meta">2026-08-27</div><div>敵カードなど色々アップデート</div></div><div class="history-item"><h3>V8.0</h3><div class="history-meta">2026-08-27</div><div>敵カードなど色々アップデート</div></div>
+<div class="history-item"><h3>v6.0 — PRフォーム・更新履歴を追加</h3><div class="history-meta">2026-08-26</div><div>閲覧者が改善内容を入力してGitHubへ送れるPRフォームと、更新履歴セクションを追加しました。</div></div>
+<div class="history-item"><h3>v5.0 — GitHub PR導線を追加</h3><div class="history-meta">2026-08-26</div><div>開発者のGitHubリポジトリへアクセスし、サイト改善を提案できる導線を追加しました。</div></div>
+<div class="history-item"><h3>v4.0 — 改善・PR機能を追加</h3><div class="history-meta">2026-08-26</div><div>チュートリアルサイトの改善に参加できる「改善・PR」セクションを追加しました。</div></div>
+</div>
+<div class="notice info"><b>開発者向け：</b>新しい更新を公開したら、この欄に「バージョン・日付・変更内容」を追記してコミットしてください。</div>
+</section>
+<section id="developer-admin">
+<h2>開発者管理画面</h2><div class="notice info"><b>管理対象：</b>ダンジョン、敵、ドロップ品、攻略情報、更新履歴を一つの管理画面から編集できます。</div>
+<div class="admin-gate">
+<h3>🔐 開発者ログイン</h3>
+<p class="small">この管理画面は、サイトの編集・更新履歴管理・GitHubへの反映をまとめて行うための画面です。</p>
+<div class="admin-warning"><b>重要：</b>静的HTMLだけでは本当の意味での安全なサーバー側ログインはできません。この版ではGitHubの認証情報をHTMLに埋め込まず、必要な操作時だけ開発者本人が入力する方式にしています。</div>
+<div class="admin-field">
+<label for="adminPass">管理画面パスワード</label>
+<input id="adminPass" placeholder="管理用パスワード" type="password"/>
+</div>
+<div class="admin-actions">
+<button class="btn primary" id="adminLogin" type="button">管理画面に入る</button>
+<button class="btn" id="adminLogout" type="button">ログアウト</button>
+</div>
+<div class="admin-status" id="adminGateStatus">このタブでは管理者としてログイン済みです。</div>
+</div>
+<div class="admin-panel" id="adminPanel" style="display: block !important;">
+<details class="admin-section" open=""><summary><div class="admin-card"><h3>📚 ダンジョン情報</h3></div></summary><div class="admin-section-body"><div class="dungeon-crud-wrap">
+<div class="admin-card">
+<h3>📚 ダンジョン情報</h3>
+<p class="small">ダンジョンの追加・編集・削除、系統効果、説明、攻略情報をここで一元管理します。閲覧者画面にも完全同期されます。</p>
+<div class="crud-toolbar">
+<input id="dungeonCrudSearch" placeholder="ダンジョン名・説明で検索" type="search"/>
+<button class="btn primary" id="dungeonCrudNew" type="button">＋ ダンジョンを追加</button>
+<button class="btn" id="dungeonCrudExport" type="button">JSONを書き出す</button>
+<label class="btn" style="cursor:pointer">JSONを読み込む<input accept=".json,application/json" hidden="" id="dungeonCrudImport" type="file"/></label>
+</div>
+<div class="dungeon-crud-table-wrap">
+<table class="dungeon-crud-table">
+<thead><tr><th>ダンジョン</th><th>系統効果</th><th>説明</th><th>敵・攻略</th><th>操作</th></tr></thead>
+<tbody id="dungeonCrudTbody"></tbody>
+</table>
+</div>
+<div class="admin-status" id="dungeonCrudStatus"></div>
+</div>
+</div></div></details>
+<div aria-labelledby="dungeonCrudModalTitle" aria-modal="true" class="crud-modal" id="dungeonCrudModal" role="dialog">
+<div class="crud-dialog">
+<h3 id="dungeonCrudModalTitle">ダンジョンを追加</h3>
+<div class="crud-grid">
+<div class="admin-field full"><label>ダンジョン名</label><input id="dungeonCrudName"/></div>
+<div class="admin-field full"><label>系統効果</label><input id="dungeonCrudEffect"/></div>
+<div class="admin-field full"><label>ダンジョン説明</label><textarea id="dungeonCrudDesc"></textarea></div>
+<div class="admin-field full"><label>攻略情報</label><textarea id="dungeonCrudStrategy"></textarea></div>
+</div>
+<div class="admin-actions">
+<button class="btn primary" id="dungeonCrudSave" type="button">保存</button>
+<button class="btn" id="dungeonCrudCancel" type="button">キャンセル</button>
+<button class="btn crud-danger" id="dungeonCrudDelete" style="display:none" type="button">削除</button>
+</div>
+</div>
+</div>
+<details class="admin-section" open=""><summary><div class="admin-card"><h3>👾 敵・ドロップ完全CRUD</h3></div></summary><div class="admin-section-body"><div class="crud-wrap">
+<div class="admin-card">
+<h3>👾 敵・ドロップ完全CRUD</h3>
+<p class="small">敵データを一覧で確認し、追加・編集・削除できます。ドラッグ＆ドロップで表示順を変更でき、敵画像も登録できます。変更内容はこのブラウザ上の編集データとして保持され、HTML保存時に現在の状態を反映します。</p>
+<div class="crud-toolbar">
+<input id="crudSearch" placeholder="敵名・ドロップ名で検索" type="search"/>
+<select id="crudDungeonFilter"><option value="">すべてのダンジョン</option>
+<option>ビギナーダンジョン</option><option>ノービスダンジョン</option>
+<option>ホーリーダンジョン</option><option>エキスパートダンジョン</option><option>アンドロデンダンジョン</option>
+</select>
+<button class="btn primary" id="crudNew" type="button">＋ 敵を追加</button>
+<button class="btn" id="crudSortSave" type="button">↕ 並び順を保存</button>
+<button class="btn" id="crudExport" type="button">JSONを書き出す</button>
+<label class="btn" style="cursor:pointer">JSONを読み込む<input accept=".json,application/json" hidden="" id="crudImport" type="file"/></label>
+</div>
+<div class="crud-table-wrap">
+<table class="crud-table">
+<thead><tr><th>ダンジョン</th><th>敵</th><th>固有スキル</th><th>ドロップ</th><th>ステータス</th><th>操作</th></tr></thead>
+<tbody id="crudTbody"><tr draggable="true"><td>ビギナーダンジョン</td><td><b>スライム</b></td><td>—</td><td>スライムマント（1/3）</td><td class="small">HP:90 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-beginner-slime">編集</button>
+<button class="btn crud-remove" data-id="current-beginner-slime">削除</button></td></tr><tr draggable="true"><td>ビギナーダンジョン</td><td><b>くろいコウモリ</b></td><td>—</td><td>くろいヘルメット（1/5）</td><td class="small">HP:90 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-beginner-blackbat">編集</button>
+<button class="btn crud-remove" data-id="current-beginner-blackbat">削除</button></td></tr><tr draggable="true"><td>ビギナーダンジョン</td><td><b>しろいコウモリ</b></td><td>—</td><td>あかるいライト（1/8）</td><td class="small">HP:90 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-beginner-whitebat">編集</button>
+<button class="btn crud-remove" data-id="current-beginner-whitebat">削除</button></td></tr><tr draggable="true"><td>ビギナーダンジョン</td><td><b>モルモットっぽいねこ</b></td><td>—</td><td>爪とひげ（1/5）</td><td class="small">HP:90 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-beginner-marmotcat">編集</button>
+<button class="btn crud-remove" data-id="current-beginner-marmotcat">削除</button></td></tr><tr draggable="true"><td>ビギナーダンジョン</td><td><b>馬刺しになるはずだった馬</b></td><td>—</td><td>—（—）</td><td class="small">HP:126 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-beginner-horse">編集</button>
+<button class="btn crud-remove" data-id="current-beginner-horse">削除</button></td></tr><tr draggable="true"><td>ビギナーダンジョン</td><td><b>こわれたロボット</b></td><td>—</td><td>スタンガン（1/6）</td><td class="small">HP:144 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-beginner-robot">編集</button>
+<button class="btn crud-remove" data-id="current-beginner-robot">削除</button></td></tr><tr draggable="true"><td>ノービスダンジョン</td><td><b>ふとったいぬ</b></td><td>【ステータス？くれてやる。】発動率1/1。ランダムでプレイヤーのステータスのどれかが1~20上がる。</td><td>—（—）</td><td class="small">HP:161 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-novice-fatdog">編集</button>
+<button class="btn crud-remove" data-id="current-novice-fatdog">削除</button></td></tr><tr draggable="true"><td>ノービスダンジョン</td><td><b>ツタンカー麺</b></td><td>—</td><td>どんぶり（1/15）</td><td class="small">HP:230 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-novice-tutancat">編集</button>
+<button class="btn crud-remove" data-id="current-novice-tutancat">削除</button></td></tr><tr draggable="true"><td>ノービスダンジョン</td><td><b>マリーアンドネット</b></td><td>【私と一緒に踊りましょう】スキル発動率1/10。獲得ゴールドが1.5倍になる。</td><td>—（—）</td><td class="small">HP:— / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-novice-marie">編集</button>
+<button class="btn crud-remove" data-id="current-novice-marie">削除</button></td></tr><tr draggable="true"><td>ノービスダンジョン</td><td><b>歩く死体</b></td><td>—</td><td>—（—）</td><td class="small">HP:230 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-novice-zombie">編集</button>
+<button class="btn crud-remove" data-id="current-novice-zombie">削除</button></td></tr><tr draggable="true"><td>ノービスダンジョン</td><td><b>船の船長</b></td><td>—</td><td>救命胴衣（1/20）</td><td class="small">HP:345 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-novice-captain">編集</button>
+<button class="btn crud-remove" data-id="current-novice-captain">削除</button></td></tr><tr draggable="true"><td>ノービスダンジョン</td><td><b>船員</b></td><td>—</td><td>—（—）</td><td class="small">HP:230 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-novice-sailor">編集</button>
+<button class="btn crud-remove" data-id="current-novice-sailor">削除</button></td></tr><tr draggable="true"><td>ホーリーダンジョン</td><td><b>パラディン</b></td><td>【詠唱】スキル発動率1/1。相手に魔法ダメージ。</td><td>魔術師のコート（1/35）</td><td class="small">HP:1,100 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-holy-paladin">編集</button>
+<button class="btn crud-remove" data-id="current-holy-paladin">削除</button></td></tr><tr draggable="true"><td>ホーリーダンジョン</td><td><b>英雄アーサー</b></td><td>【剣の奏でるハーモニー】スキル発動率1/1。相手に物理ダメージ。</td><td>エクスカリバー（1/333）</td><td class="small">HP:2,640 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-holy-arthur">編集</button>
+<button class="btn crud-remove" data-id="current-holy-arthur">削除</button></td></tr><tr draggable="true"><td>ホーリーダンジョン</td><td><b>雷神ソー</b></td><td>【怒りのいかづち】1/5の確率で即死</td><td>ムジョルニア（1/100）</td><td class="small">HP:2,200 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-holy-thor">編集</button>
+<button class="btn crud-remove" data-id="current-holy-thor">削除</button></td></tr><tr draggable="true"><td>エキスパートダンジョン</td><td><b>レッドドラゴン</b></td><td>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</td><td>炎の翼（1/30）</td><td class="small">HP:3,200 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-expert-red">編集</button>
+<button class="btn crud-remove" data-id="current-expert-red">削除</button></td></tr><tr draggable="true"><td>エキスパートダンジョン</td><td><b>ブルードラゴン</b></td><td>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</td><td>氷の翼（1/30）</td><td class="small">HP:3,200 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-expert-blue">編集</button>
+<button class="btn crud-remove" data-id="current-expert-blue">削除</button></td></tr><tr draggable="true"><td>エキスパートダンジョン</td><td><b>ホワイトドラゴン</b></td><td>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</td><td>光の翼（1/30）</td><td class="small">HP:3,200 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-expert-white">編集</button>
+<button class="btn crud-remove" data-id="current-expert-white">削除</button></td></tr><tr draggable="true"><td>エキスパートダンジョン</td><td><b>ブラックドラゴン</b></td><td>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</td><td>闇の翼（1/30）</td><td class="small">HP:3,200 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-expert-black">編集</button>
+<button class="btn crud-remove" data-id="current-expert-black">削除</button></td></tr><tr draggable="true"><td>エキスパートダンジョン</td><td><b>ゴーストドラゴン</b></td><td>【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。</td><td>ドラゴンのたましい（1/50）</td><td class="small">HP:4,480 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-expert-ghost">編集</button>
+<button class="btn crud-remove" data-id="current-expert-ghost">削除</button></td></tr><tr draggable="true"><td>アントロデンダンジョン</td><td><b>縺ｫ繧?メ繝オル</b></td><td>【ドッペルゲンガー】自分と全く同じステータスの敵になる。</td><td>チタンのペンダント（1/99）</td><td class="small">HP:300 / ATK:— / DEF:—<br/>SPD:— / EXP:— / G:—</td><td class="crud-actions"><button class="btn crud-edit" data-id="current-android-garbled">編集</button>
+<button class="btn crud-remove" data-id="current-android-garbled">削除</button></td></tr></tbody>
+</table>
+</div>
+<div class="admin-status" id="crudStatus"></div>
+</div>
+</div></div></details>
+<div aria-labelledby="crudModalTitle" aria-modal="true" class="crud-modal" id="crudModal" role="dialog">
+<div class="crud-dialog">
+<h3 id="crudModalTitle">敵を追加</h3>
+<div class="crud-grid">
+<div class="admin-field">
+<label>ダンジョン</label>
+<select id="crudDungeon">
+<option>ビギナーダンジョン</option><option>ノービスダンジョン</option>
+<option>ホーリーダンジョン</option><option>エキスパートダンジョン</option><option>アンドロデンダンジョン</option>
+</select>
+</div>
+<div class="admin-field"><label>敵名</label><input id="crudEnemyName"/></div>
+<div class="admin-field full"><label>固有スキル</label><textarea id="crudSkill"></textarea></div>
+<div class="admin-field full"><label>ドロップ品（複数登録可）</label><div class="drop-editor" id="crudDropsEditor"></div><button class="btn" id="crudAddDrop" style="margin-top:6px" type="button">＋ ドロップを追加</button></div>
+<div class="admin-field full"><label>モブステータス</label><div class="crud-grid">
+<div class="admin-field"><label>HP</label><input id="crudHP" inputmode="numeric" placeholder="例：5000"/></div>
+<div class="admin-field"><label>ATK</label><input id="crudATK" inputmode="numeric" placeholder="例：300"/></div>
+<div class="admin-field"><label>DEF</label><input id="crudDEF" inputmode="numeric" placeholder="例：150"/></div>
+<div class="admin-field"><label>SPD</label><input id="crudSPD" inputmode="numeric" placeholder="例：80"/></div>
+<div class="admin-field"><label>EXP</label><input id="crudEXP" inputmode="numeric" placeholder="例：120"/></div>
+<div class="admin-field"><label>ゴールド</label><input id="crudGold" inputmode="numeric" placeholder="例：50"/></div>
+</div></div>
+<div class="admin-field full"><label>モブ詳細・攻略説明（閲覧者画面に表示）</label><textarea id="crudStrategy" placeholder="この敵の特徴・行動・攻略方法など"></textarea></div>
+<div class="admin-field full"><label>閲覧者カード表示プレビュー</label>
+<div class="enemy-card" id="crudViewerPreview" style="margin-top:8px"></div>
+</div>
+<div class="admin-field full"><label>敵画像</label>
+<div class="image-upload-box">
+<input accept="image/*" id="crudImageFile" type="file"/>
+<div class="image-preview" id="crudImagePreview"></div>
+</div>
+</div>
+</div>
+<div class="admin-actions">
+<button class="btn primary" id="crudSave" type="button">保存</button>
+<button class="btn" id="crudCancel" type="button">キャンセル</button>
+<button class="btn crud-danger" id="crudDelete" style="display:none" type="button">削除</button>
+</div>
+</div>
+</div>
+<div class="admin-grid">
+<details class="admin-section"><summary><div class="admin-card"><h3>📝 更新履歴</h3></div></summary><div class="admin-section-body"><div class="admin-card">
+<h3>📝 更新履歴</h3>
+<div class="admin-field"><label>バージョン</label><input id="adminVersion" placeholder="v7.0"/></div>
+<div class="admin-field"><label>日付</label><input id="adminDate" type="date"/></div>
+<div class="admin-field"><label>変更内容</label><textarea id="adminChange"></textarea></div>
+<div class="admin-actions">
+<button class="btn primary" id="adminAddHistory" type="button">更新履歴を追加</button>
+</div>
+</div></div></details>
+<details class="admin-section" id="crudSyncDiagnostics" open=""><summary><div class="admin-card"><h3>🧩 CRUD → 閲覧者画面 同期確認</h3></div></summary><div class="admin-section-body"><div class="admin-card">
+<h3>🧩 CRUD → 閲覧者画面 同期確認</h3>
+<p class="small">管理画面で保存されている各CRUDデータと、公開HTMLへ埋め込まれるデータ件数を確認します。</p>
+<button class="btn" id="crudSyncCheck" type="button">🔎 CRUD同期を診断</button>
+<pre id="crudSyncStatus" style="white-space:pre-wrap;margin-top:12px">untroddentWikiDungeonCRUD_v1: 未保存
+untroddentWikiEnemyCRUD_v5: 20件
+untroddentWikiDropCRUD_v1: 未保存
+untroddentWikiUpdates_v1: 未保存
+
+公開スナップショット:
+ダンジョン: 0件
+敵: 20件
+ドロップ: 0件
+更新履歴: 0件
+
+※ ここで件数が正しいのに閲覧者画面が古い場合、閲覧者側レンダラーが固定データを使っている可能性があります。</pre>
+</div></div></details>
+<details class="admin-section" id="siteAnalyticsPanel"><summary><div class="admin-card"><h3>📊 サイトアナリティクス</h3></div></summary><div class="admin-section-body"><div class="admin-card">
+<h3>📊 サイトアナリティクス</h3>
+<p class="small">GoatCounterを使って閲覧数を記録し、管理画面で今日・過去7日・過去30日・累計の閲覧数を確認できます。</p>
+<div class="crud-grid"><div class="admin-field full"><label>GoatCounterサイトコード</label><input autocomplete="off" id="analyticsGoatCode" placeholder="例: my-wiki" value="tsuritetsu9306"/></div></div>
+<div class="admin-actions"><button class="btn primary" id="analyticsSave" type="button">💾 アナリティクス設定を保存</button><button class="btn" id="analyticsLoad" type="button">🔄 閲覧数を更新</button></div>
+<pre id="analyticsStatus" style="white-space:pre-wrap;margin-top:12px">❌ アナリティクス取得失敗。サイトコードとGoatCounter設定を確認してください。
+Failed to fetch</pre>
+<div class="crud-grid" id="analyticsCards" style="margin-top:12px;display:none">
+<div class="admin-card"><h4>今日</h4><div id="analyticsToday" style="font-size:1.8em;font-weight:700">—</div></div>
+<div class="admin-card"><h4>過去7日</h4><div id="analytics7d" style="font-size:1.8em;font-weight:700">—</div></div>
+<div class="admin-card"><h4>過去30日</h4><div id="analytics30d" style="font-size:1.8em;font-weight:700">—</div></div>
+<div class="admin-card"><h4>累計</h4><div id="analyticsTotal" style="font-size:1.8em;font-weight:700">—</div></div></div>
+<p class="small" style="margin-top:10px">設定後に「GitHubへ反映」を実行すると、公開HTMLに計測コードが組み込まれます。</p>
+</div></div></details>
+<details class="admin-section" id="githubReliableSync" open=""><summary><div class="admin-card"><h3>☁️ GitHub反映センター（反映専用）</h3></div></summary><div class="admin-section-body"><div class="admin-card">
+<h3>☁️ GitHub反映センター（反映専用）</h3>
+<p class="small">
+    管理画面で変更したダンジョン・敵・ドロップ・攻略情報・画像・並び順を、現在のGitHubリポジトリへ反映します。
+    この版はGitHubへの反映だけに専念します。認証 → 対象ファイル確認 → 最新SHA取得 → 更新 → 更新後再取得確認までを一連で行います。
+  </p>
+<div class="crud-grid">
+<div class="admin-field full">
+<label>GitHubアクセストークン</label>
+<input autocomplete="off" id="reliableGithubToken" placeholder="github_pat_..." type="password"/>
+</div>
+<div class="admin-field">
+<label>対象HTML</label>
+<select id="reliableGithubPath"><option value="index.html">index.html</option></select>
+</div>
+<div class="admin-field">
+<label>ブランチ</label>
+<select id="reliableGithubBranch"><option value="main">main</option></select>
+</div>
+<div class="admin-field full">
+<label>コミットメッセージ</label>
+<input id="reliableGithubMessage" value="Update tutorial wiki from admin panel"/>
+</div>
+</div>
+<div class="admin-actions">
+<button class="btn" id="reliableGithubDiagnose" type="button">🔎 接続・権限・ファイル診断</button>
+<button class="btn" id="reliableGithubSave" type="button">💾 更新HTMLを保存</button>
+<button class="btn primary" id="reliableGithubCommit" type="button">☁️ GitHubへ反映</button>
+</div>
+<pre id="reliableGithubStatus" style="white-space:pre-wrap;margin-top:12px">トークンを入力して「☁️ GitHubへ反映」を押せば、最新SHAを自動取得してそのまま更新します。診断ボタンは事前確認用です。</pre>
+</div></div></details>
+</div>
+</div>
+</section>
+<footer>アントロデン攻略チュートリアル / 非公式ガイド<br/><span class="small">提供されたゲーム画面を参考に構成した攻略資料です。　サイト累計閲覧数：<span aria-live="polite" id="publicVisitorCount"><iframe frameborder="0" height="20" scrolling="no" src="https://tsuritetsu9306.goatcounter.com/counter/TOTAL.html?&amp;no_branding=1&amp;style=html%2Cbody%7Bmargin%3A0%3Bbackground%3Atransparent%3Boverflow%3Ahidden%3Bfont%3A700%2012px%20sans-serif%3Bcolor%3A%23e9eee9%7Ddiv%7Bdisplay%3Ablock%3Bwhite-space%3Anowrap%7D%23gcvc-for%2C%23gcvc-by%7Bdisplay%3Anone%7D%23gcvc-views%7Bcolor%3A%23e9eee9%7D" title="サイト累計閲覧数" width="92"></iframe></span></span></footer>
+<script id="untroddent-visitor-count-script">
+(function(){
+  var target=document.getElementById("publicVisitorCount"), attempts=0;
+  function render(){
+    if(window.goatcounter&&typeof window.goatcounter.visit_count==="function"){
+      target.textContent="";
+      window.goatcounter.visit_count({append:"#publicVisitorCount",type:"html",path:"TOTAL",no_branding:true,attr:{width:"92",height:"20",title:"サイト累計閲覧数"},style:"html,body{margin:0;background:transparent;overflow:hidden;font:700 12px sans-serif;color:#e9eee9}div{display:block;white-space:nowrap}#gcvc-for,#gcvc-by{display:none}#gcvc-views{color:#e9eee9}"});
+      setTimeout(function(){if(target&&!target.querySelector("iframe"))target.textContent="公開設定待ち";},1500);
+      return;
+    }
+    if(attempts++<50){setTimeout(render,100);}
+    else if(target){target.textContent="取得できません";}
+  }
+  render();
+})();
+</script>
+<script>
+(function(){
+  const repo="https://github.com/tsuritetsu-eng/untroddent-wiki";
+  const status=document.getElementById("prStatus"), title=document.getElementById("prTitle");
+  const type=document.getElementById("prType"), body=document.getElementById("prBody");
+  const reason=document.getElementById("prReason"), preview=document.getElementById("prPreview");
+  const make=document.getElementById("makePrText"), open=document.getElementById("openPrWithText");
+
+  function markdown(){
+    return "## 変更の種類\n"+type.value+"\n\n## 変更内容\n"+(body.value.trim()||"変更内容を記入してください。")+
+      "\n\n## 変更理由・補足\n"+(reason.value.trim()||"特になし")+
+      "\n\n## 確認事項\n- [ ] 表示を確認しました\n- [ ] 既存のUI・レイアウトへの影響を確認しました";
+  }
+  make.addEventListener("click",function(){
+    preview.style.display="block"; preview.textContent=markdown();
+    status.textContent="PR本文を作成しました。内容を確認してください。";
+  });
+  open.addEventListener("click",function(){
+    const t=title.value.trim()||"チュートリアルサイトの改善提案";
+    const url=repo+"/issues/new?title="+encodeURIComponent(t)+"&body="+encodeURIComponent(markdown());
+    window.open(url,"_blank","noopener");
+    status.textContent="GitHubの入力画面を開きました。内容を確認してIssueを作成してください。必要ならそこからPull Requestへ進めます。";
+  });
+})();
+</script>
+<script>
+(function(){
+  const repoOwner="tsuritetsu-eng", repoName="untroddent-wiki", branch="main";
+  const adminKey="untroddentWikiAdminUnlocked";
+  const passInput=document.getElementById("adminPass");
+  const panel=document.getElementById("adminPanel");
+  const gateStatus=document.getElementById("adminGateStatus");
+  const ghStatus=document.getElementById("adminGithubStatus");
+  // 旧版が保存した「ログインを記憶」フラグは無効化します。
+  localStorage.removeItem("untroddentWikiAdminRemembered");
+
+  const dungeonData={
+    "ビギナーダンジョン":{effect:"ドロップ率の分母が1減る",desc:"序盤向け。一般的な敵が出現します。"},
+    "ノービスダンジョン":{effect:"獲得ゴールドが15%上がる",desc:"ビギナーの次に挑戦するステップアップ帯。"},
+    "ホーリーダンジョン":{effect:"獲得ガウルがたまに1増える",desc:"一般的な敵が出現する上位側のダンジョン。"},
+    "エキスパートダンジョン":{effect:"経験値が2倍になる",desc:"竜などが出現する高難度ダンジョン。"},
+    "アンドロデンダンジョン":{effect:"なし",desc:"正体不明のボスが出現する最上位ダンジョン。"}
+  };
+
+  const ADMIN_PASSWORD_SHA256="a7501d587cedecb5f4570b7b638395711e1b13b8a1bdf3be45225c39a6eb8216";
+  async function sha256(text){
+    const data=new TextEncoder().encode(text);
+    const hash=await crypto.subtle.digest("SHA-256",data);
+    return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");
+  }
+  async function unlock(){
+    const value=passInput.value;
+    if(!value){
+      gateStatus.textContent="パスワードを入力してください。";
+      return;
+    }
+    if(await sha256(value)!==ADMIN_PASSWORD_SHA256){
+      gateStatus.textContent="パスワードが違います。";
+      return;
+    }
+    sessionStorage.setItem(adminKey,"1");
+    // ログイン状態はこのタブを閉じるまでだけ有効。
+    // localStorageには保存しないため、次回アクセス時は必ず再認証します。
+    panel.style.setProperty("display","block","important");
+    passInput.value="";
+    gateStatus.textContent="管理画面を開きました。このタブを閉じると再度パスワードが必要です。";
+  }
+  function logout(){
+    sessionStorage.removeItem(adminKey);
+    localStorage.removeItem("untroddentWikiAdminRemembered");
+    panel.style.display="none";
+    passInput.value="";
+    gateStatus.textContent="ログアウトしました。";
+  }
+  document.getElementById("adminLogin").onclick=unlock;
+  document.getElementById("adminLogout").onclick=logout;
+  // 初期表示では必ず管理パネルをロック。
+  // 旧版のlocalStorage記憶値だけでは開かない。
+  panel.style.setProperty("display","none","important");
+  if(sessionStorage.getItem(adminKey)==="1"){
+    panel.style.setProperty("display","block","important");
+    gateStatus.textContent="このタブでは管理者としてログイン済みです。";
+  }
+
+  const d=document.getElementById("adminDungeon");
+  const effect=document.getElementById("adminEffect"), desc=document.getElementById("adminDungeonDesc");
+  function loadDungeon(){ if(!d||!effect||!desc)return; const x=dungeonData[d.value]; if(!x)return; effect.value=x.effect||""; desc.value=x.desc||""; }
+  if(d) d.onchange=loadDungeon; loadDungeon();
+
+  const legacyEnemyAdd=document.getElementById("adminAddEnemy");
+  if(legacyEnemyAdd) legacyEnemyAdd.onclick=function(){
+    const name=document.getElementById("adminEnemyName").value.trim();
+    if(!name){gateStatus.textContent="敵名を入力してください。";return;}
+    const card=document.createElement("div"); card.className="enemy-card";
+    const esc=s=>s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+    card.innerHTML="<h4>"+esc(name)+"</h4><p class='enemy-label'>固有スキル</p><p>"+esc(document.getElementById("adminEnemySkill").value||"—")+
+      "</p><div class='drop'><b>ドロップ：</b>"+esc(document.getElementById("adminDropName").value||"—")+"</div><p class='small'>"+
+      esc(document.getElementById("adminDropEffect").value||"")+"</p><p><b>ドロップ率：</b>"+esc(document.getElementById("adminDropRate").value||"—")+"</p>";
+    gateStatus.textContent="敵カードを一時追加しました。GitHubへ反映するには「☁️ GitHubへ反映」を実行してください。";
+    document.querySelector(".enemy-dungeon .enemy-cards")?.appendChild(card);
+  };
+
+  const legacyEnemyClear=document.getElementById("adminClearEnemy");
+  if(legacyEnemyClear) legacyEnemyClear.onclick=function(){
+    ["adminEnemyName","adminEnemySkill","adminDropName","adminDropEffect","adminDropRate"].forEach(id=>document.getElementById(id).value="");
+  };
+
+  document.getElementById("adminAddHistory").onclick=function(){
+    const v=document.getElementById("adminVersion").value.trim(), date=document.getElementById("adminDate").value, change=document.getElementById("adminChange").value.trim();
+    if(!v||!date||!change){gateStatus.textContent="バージョン・日付・変更内容をすべて入力してください。";return;}
+    const list=document.querySelector(".history-list"); const item=document.createElement("div"); item.className="history-item";
+    const h=document.createElement("h3"); h.textContent=v; const meta=document.createElement("div"); meta.className="history-meta"; meta.textContent=date;
+    const body=document.createElement("div"); body.textContent=change; item.append(h,meta,body); list.prepend(item);
+    gateStatus.textContent="更新履歴を一時追加しました。";
+  };
+
+  function downloadCurrent(){
+    const blob=new Blob(["<!doctype html>\n"+document.documentElement.outerHTML],{type:"text/html;charset=utf-8"});
+    const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="index_updated.html"; a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  }
+  const legacyDownload=document.getElementById("adminDownload");
+  if(legacyDownload) legacyDownload.onclick=downloadCurrent;
+
+  const legacyGithubCommit=document.getElementById("adminGithubCommit");
+  if(legacyGithubCommit) legacyGithubCommit.onclick=async function(){
+    const token=document.getElementById("githubToken").value.trim();
+    if(!token){ghStatus.textContent="GitHubアクセストークンを入力してください。";return;}
+    ghStatus.textContent="GitHubへ接続しています…";
+    try{
+      const api="https://api.github.com/repos/"+repoOwner+"/"+repoName+"/contents/index.html";
+      const headers={"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"};
+      const get=await fetch(api+"?ref="+encodeURIComponent(branch),{headers});
+      if(!get.ok) throw new Error("GitHubからindex.htmlを取得できませんでした（HTTP "+get.status+"）。");
+      const current=await get.json();
+      const content=btoa(unescape(encodeURIComponent("<!doctype html>\n"+document.documentElement.outerHTML)));
+      const put=await fetch(api,{method:"PUT",headers,body:JSON.stringify({
+        message:"Update tutorial site from developer admin",
+        content:content,
+        sha:current.sha,
+        branch:branch
+      })});
+      if(!put.ok) throw new Error("GitHubへの反映に失敗しました（HTTP "+put.status+"）。権限と対象ファイルを確認してください。");
+      ghStatus.textContent="GitHubへの反映が完了しました。コミットを確認してください。入力したトークンは保存していません。";
+      document.getElementById("githubToken").value="";
+    }catch(e){ghStatus.textContent=e.message;}
+  };
+})();
+</script>
+<script>
+(function(){
+  const KEY="untroddentWikiEnemyCRUD_v5";
+  // 閲覧者画面に既に存在する敵図鑑カードを、管理者CRUDの初期データとして完全移行。
+  // 同名モブでもドロップが違うカードは別レコードとして保持します。
+  const initial=[{"id":"current-beginner-slime","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"スライム","skill":"—","drops":[{"name":"スライムマント","rate":"1/3","effect":"【防具】DEF+20 やわらかいマント（効果なし）"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"スライムマント","rate":"1/3","effect":"【防具】DEF+20 やわらかいマント（効果なし）"},{"id":"current-beginner-blackbat","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"くろいコウモリ","skill":"—","drops":[{"name":"くろいヘルメット","rate":"1/5","effect":"【防具】DEF+50 坑道でも怖くない（効果なし）"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"くろいヘルメット","rate":"1/5","effect":"【防具】DEF+50 坑道でも怖くない（効果なし）"},{"id":"current-beginner-whitebat","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"しろいコウモリ","skill":"—","drops":[{"name":"あかるいライト","rate":"1/8","effect":"【武器】ATK+20。1ターンごとに1/15の確率で敵を行動不能にする。強化値ごとに1/(15-0.5×強化値)の確率で相手を麻痺させる。1/3が上限。"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"あかるいライト","rate":"1/8","effect":"【武器】ATK+20。1ターンごとに1/15の確率で敵を行動不能にする。強化値ごとに1/(15-0.5×強化値)の確率で相手を麻痺させる。1/3が上限。"},{"id":"current-beginner-marmotcat","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"モルモットっぽいねこ","skill":"—","drops":[{"name":"爪とひげ","rate":"1/5","effect":"【武器】ATK+50 するどい爪とひげ（効果なし）"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"爪とひげ","rate":"1/5","effect":"【武器】ATK+50 するどい爪とひげ（効果なし）"},{"id":"current-beginner-horse","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"馬刺しになるはずだった馬","skill":"—","drops":[],"strategy":"—","hp":"126","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-beginner-robot","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"こわれたロボット","skill":"—","drops":[{"name":"スタンガン","rate":"1/6","effect":"【武器】ATK+150 『ボル○ッカー』。1ターンごとに1/10の確率で敵全体に攻撃。強化値に確率は依存しない。"}],"strategy":"—","hp":"144","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"スタンガン","rate":"1/6","effect":"【武器】ATK+150 『ボル○ッカー』。1ターンごとに1/10の確率で敵全体に攻撃。強化値に確率は依存しない。"},{"id":"current-novice-fatdog","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"ふとったいぬ","skill":"【ステータス？くれてやる。】発動率1/1。ランダムでプレイヤーのステータスのどれかが1~20上がる。","drops":[],"strategy":"—","hp":"161","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-novice-tutancat","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"ツタンカー麺","skill":"—","drops":[{"name":"どんぶり","rate":"1/15","effect":"【装身具】獲得ゴールドが2倍になる"}],"strategy":"—","hp":"230","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"どんぶり","rate":"1/15","effect":"【装身具】獲得ゴールドが2倍になる"},{"id":"current-novice-marie","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"マリーアンドネット","skill":"【私と一緒に踊りましょう】スキル発動率1/10。獲得ゴールドが1.5倍になる。","drops":[],"strategy":"—","hp":"","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-novice-zombie","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"歩く死体","skill":"—","drops":[],"strategy":"—","hp":"230","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-novice-captain","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"船の船長","skill":"—","drops":[{"name":"救命胴衣","rate":"1/20","effect":"【防具】DEF+500 これを着て（効果はなし）"}],"strategy":"—","hp":"345","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"救命胴衣","rate":"1/20","effect":"【防具】DEF+500 これを着て（効果はなし）"},{"id":"current-novice-sailor","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"船員","skill":"—","drops":[],"strategy":"—","hp":"230","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-holy-paladin","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"パラディン","skill":"【詠唱】スキル発動率1/1。相手に魔法ダメージ","drops":[{"name":"魔術師のコート","rate":"1/35","effect":"【防具】DEF+3000。一度体力が全体ステータスの30％以下になった時、全回復する。"}],"strategy":"—","hp":"1,100","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"魔術師のコート","rate":"1/35","effect":"【防具】DEF+3000。一度体力が全体ステータスの30％以下になった時、全回復する。"},{"id":"current-holy-arthur","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"英雄アーサー","skill":"【剣の奏でるハーモニー】スキル発動率1/1。相手に物理ダメージ","drops":[{"name":"エクスカリバー","rate":"1/333","effect":"【武器】ATK+7777。1ターン目に自分に英雄状態を付与した後、1/(17-1×強化値)（最大1/1）の確率で相手の最大HPを（最大HPの50〜50＋強化値×3）の中のランダムなパーセントで（最大95％）削る。どんな手段でも相手はこれを回復できない。削られた分の相手のHPバーは白黒で削られる。また、英雄状態を解かれると、相手のHPを削ることはできない。"}],"strategy":"—","hp":"2,640","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"エクスカリバー","rate":"1/333","effect":"【武器】ATK+7777。1ターン目に自分に英雄状態を付与した後、1/(17-1×強化値)（最大1/1）の確率で相手の最大HPを（最大HPの50〜50＋強化値×3）の中のランダムなパーセントで（最大95％）削る。どんな手段でも相手はこれを回復できない。削られた分の相手のHPバーは白黒で削られる。また、英雄状態を解かれると、相手のHPを削ることはできない。"},{"id":"current-holy-thor","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"雷神ソー","skill":"【怒りのいかづち】1/5の確率で即死","drops":[{"name":"ムジョルニア","rate":"1/100","effect":"【武器】ATK+8000。全体攻撃になる。また、1/9の確率で雷を呼び起こし敵全体に大ダメージ、また、英雄状態を解くことができる。"}],"strategy":"—","hp":"2,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"ムジョルニア","rate":"1/100","effect":"【武器】ATK+8000。全体攻撃になる。また、1/9の確率で雷を呼び起こし敵全体に大ダメージ、また、英雄状態を解くことができる。"},{"id":"current-expert-red","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"レッドドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"炎の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"炎の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-blue","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ブルードラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"氷の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"氷の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-white","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ホワイトドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"光の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"光の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-black","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ブラックドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"闇の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"闇の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-ghost","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ゴーストドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"ドラゴンのたましい","rate":"1/50","effect":"合成素材"}],"strategy":"—","hp":"4,480","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"ドラゴンのたましい","rate":"1/50","effect":"合成素材"},{"id":"current-android-garbled","dungeon":"アントロデンダンジョン","dungeonId":"d5","name":"縺ｫ繧?メ繝オル","skill":"【ドッペルゲンガー】自分と全く同じステータスの敵になる。","drops":[{"name":"チタンのペンダント","rate":"1/99","effect":"【装身具】洗礼された数だけ強くなる。（1.1の(洗礼回数)乗分、全ステータスが強化される）"}],"strategy":"—","hp":"300","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"チタンのペンダント","rate":"1/99","effect":"【装身具】洗礼された数だけ強くなる。（1.1の(洗礼回数)乗分、全ステータスが強化される）"}];
+  // 既存モブの単一ドロップを複数ドロップ形式へ移行し、ステータス項目を追加。
+  initial.forEach(x=>{const first=(Array.isArray(x.drops)&&x.drops.length?x.drops:[{name:x.drop||"—",rate:x.rate||"—",effect:x.effect||"—"}])[0];x.drops=Array.isArray(x.drops)&&x.drops.length?x.drops:[first];x.drop=x.drop??first.name;x.rate=x.rate??first.rate;x.effect=x.effect??first.effect;x.hp=x.hp??"";x.atk=x.atk??"";x.def=x.def??"";x.spd=x.spd??"";x.exp=x.exp??"";x.gold=x.gold??"";});
+
+  const LEGACY_IDS=new Set(["e1","e2","e3","e4","e5"]);
+  let data=[];
+  try{data=JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){data=null;}
+  if(!Array.isArray(data) || !data.length){
+    data=JSON.parse(JSON.stringify(initial));
+    localStorage.setItem(KEY,JSON.stringify(data));
+  }else if(data.every(x=>LEGACY_IDS.has(String(x.id)))){
+    // 旧5件の仮データだけが保存されている場合は、閲覧者画面の実データへ置換。
+    data=JSON.parse(JSON.stringify(initial));
+    localStorage.setItem(KEY,JSON.stringify(data));
+  }else{
+    // 既存の管理者編集内容を尊重しつつ、まだCRUDに取り込まれていない閲覧者カードだけ追加。
+    const ids=new Set(data.map(x=>String(x.id)));
+    let added=false;
+    initial.forEach(x=>{if(!ids.has(x.id)){data.push(JSON.parse(JSON.stringify(x)));added=true;}});
+    if(added)localStorage.setItem(KEY,JSON.stringify(data));
+  }
+  let editingId=null;
+
+  // 既存データとの互換性を保ちながら、敵→ダンジョンをIDでも紐付ける。
+  // ダンジョン名を変更しても敵カードが消えないようにするための移行処理。
+  function migrateEnemyDungeonIds(){
+    let dungeons=[];
+    try{dungeons=JSON.parse(localStorage.getItem("untroddentWikiDungeonCRUD_v1")||"null")||window.__UNTRODDENT_DUNGEON_DATA__||[];}catch(_){dungeons=window.__UNTRODDENT_DUNGEON_DATA__||[];}
+    const byName=new Map((dungeons||[]).map(d=>[String(d.name||""),d]));
+    let changed=false;
+    data=(data||[]).map(e=>{
+      if(!e.dungeonId){
+        const d=byName.get(String(e.dungeon||""));
+        if(d){changed=true;return {...e,dungeonId:d.id};}
+      }
+      return e;
+    });
+    if(changed)save();
+  }
+  migrateEnemyDungeonIds();
+
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+  function normalizeDrops(x){
+    if(Array.isArray(x?.drops)&&x.drops.length) return x.drops.map(d=>({name:d.name||"—",rate:d.rate||"—",effect:d.effect||"—"}));
+    return [{name:x?.drop||"—",rate:x?.rate||"—",effect:x?.effect||"—"}];
+  }
+  data=(data||[]).map(x=>{const drops=normalizeDrops(x); return {...x,drops,hp:x.hp??"",atk:x.atk??"",def:x.def??"",spd:x.spd??"",exp:x.exp??"",gold:x.gold??""};});
+  // ダンジョンCRUDの元項目（名称・系統効果・説明・攻略情報）を常に保持。
+  // 空データや旧版への更新で項目が欠落しても、既存の編集値を優先して補完する。
+  try{localStorage.setItem(KEY+"_backup",JSON.stringify(data));}catch(_){}
+  try{localStorage.setItem(KEY,JSON.stringify(data));}catch(_){}
+  function renderDropsEditor(drops){
+    const root=$("crudDropsEditor"); if(!root)return;
+    const list=(Array.isArray(drops)&&drops.length?drops:[{name:"",rate:"",effect:""}]);
+    root.innerHTML=list.map((d,i)=>`<div class="drop-row" data-index="${i}"><input class="drop-name" placeholder="ドロップ品" value="${esc(d.name)}"><input class="drop-rate" placeholder="1/30" value="${esc(d.rate)}"><input class="drop-effect" placeholder="効果・性能" value="${esc(d.effect)}"><button class="btn crud-danger drop-remove" type="button">削除</button></div>`).join("");
+    root.querySelectorAll(".drop-remove").forEach(b=>b.onclick=()=>{if(root.querySelectorAll(".drop-row").length>1){b.parentElement.remove();}else{b.parentElement.querySelectorAll("input").forEach(i=>i.value="");} updateViewerPreview();});
+    root.querySelectorAll("input").forEach(i=>i.addEventListener("input",updateViewerPreview));
+  }
+  function getDrops(){
+    return [...document.querySelectorAll("#crudDropsEditor .drop-row")].map(r=>({name:r.querySelector(".drop-name").value.trim()||"—",rate:r.querySelector(".drop-rate").value.trim()||"—",effect:r.querySelector(".drop-effect").value.trim()||"—"})).filter(d=>d.name!=="—"||d.rate!=="—"||d.effect!=="—");
+  }
+  function updateViewerPreview(){
+    const root=$("crudViewerPreview"); if(!root)return;
+    const name=$("crudEnemyName")?.value.trim()||"名称未設定", skill=$("crudSkill")?.value.trim()||"—", strategy=$("crudStrategy")?.value.trim()||"—";
+    const drops=getDrops(); const hp=$("crudHP")?.value.trim()||"—", atk=$("crudATK")?.value.trim()||"—", def=$("crudDEF")?.value.trim()||"—", spd=$("crudSPD")?.value.trim()||"—", exp=$("crudEXP")?.value.trim()||"—", gold=$("crudGold")?.value.trim()||"—";
+    const dropHtml=drops.length?drops.map(d=>`<div class="enemy-drop-item"><b>${esc(d.name)}</b> <span>（${esc(d.rate)}）</span><br><span class="small">${esc(d.effect)}</span></div>`).join(""):"<div>登録なし</div>";
+    root.innerHTML='<h4>'+esc(name)+'</h4><p class="enemy-label">固有スキル</p><p>'+esc(skill)+'</p><div class="drop"><b>ドロップ：</b>'+dropHtml+'</div><div class="enemy-stats"><div class="enemy-stat"><b>HP</b><span>'+esc(hp)+'</span></div><div class="enemy-stat"><b>ATK</b><span>'+esc(atk)+'</span></div><div class="enemy-stat"><b>DEF</b><span>'+esc(def)+'</span></div><div class="enemy-stat"><b>SPD</b><span>'+esc(spd)+'</span></div><div class="enemy-stat"><b>EXP</b><span>'+esc(exp)+'</span></div><div class="enemy-stat"><b>GOLD</b><span>'+esc(gold)+'</span></div></div><p class="small"><b>攻略：</b>'+esc(strategy)+'</p>';
+  }
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(data));localStorage.setItem(KEY+"_backup",JSON.stringify(data));}catch(e){}}
+  function render(){
+    const q=$("crudSearch").value.trim().toLowerCase(), f=$("crudDungeonFilter").value;
+    const rows=data.filter(x=>(!f||x.dungeon===f)&&(!q||[x.name,x.drop,x.skill].join(" ").toLowerCase().includes(q)));
+    $("crudTbody").innerHTML=rows.length?rows.map(x=>`<tr>
+      <td>${esc(x.dungeon)}</td><td>${x.image?`<img class="enemy-thumb" src="${esc(x.image)}" alt="">`:''}<b>${esc(x.name)}</b></td><td>${esc(x.skill)}</td>
+      <td>${normalizeDrops(x).map(d=>esc(d.name)+"（"+esc(d.rate)+"）").join("<br>")}</td><td class="small">HP:${esc(x.hp||"—")} / ATK:${esc(x.atk||"—")} / DEF:${esc(x.def||"—")}<br>SPD:${esc(x.spd||"—")} / EXP:${esc(x.exp||"—")} / G:${esc(x.gold||"—")}</td>
+      <td class="crud-actions"><button class="btn crud-edit" data-id="${esc(x.id)}">編集</button>
+      <button class="btn crud-remove" data-id="${esc(x.id)}">削除</button></td>
+    </tr>`).join(""):`<tr><td colspan="7" class="crud-empty">該当する敵がありません。</td></tr>`;
+    document.querySelectorAll(".crud-edit").forEach(b=>b.onclick=()=>openEdit(b.dataset.id));
+    document.querySelectorAll(".crud-remove").forEach(b=>b.onclick=()=>remove(b.dataset.id));
+    if(typeof window.__UNTRODDENT_REFRESH_ENEMY_GALLERY === "function") window.__UNTRODDENT_REFRESH_ENEMY_GALLERY();
+  }
+  function openNew(){
+    editingId=null;$("crudModalTitle").textContent="敵を追加";$("crudDelete").style.display="none";
+    ["crudEnemyName","crudSkill","crudStrategy","crudHP","crudATK","crudDEF","crudSPD","crudEXP","crudGold"].forEach(id=>$(id).value=""); renderDropsEditor([{name:"",rate:"",effect:""}]);
+    $("crudDungeon").value="ビギナーダンジョン";$("crudModal").classList.add("open");updateViewerPreview();$("crudEnemyName").focus();
+  }
+  function openEdit(id){
+    const x=data.find(v=>v.id===id);if(!x)return;editingId=id;$("crudModalTitle").textContent="敵を編集";$("crudDelete").style.display="inline-block";
+    $("crudDungeon").value=x.dungeon;$("crudEnemyName").value=x.name;$("crudSkill").value=x.skill;
+    $("crudStrategy").value=x.strategy; $("crudHP").value=x.hp??""; $("crudATK").value=x.atk??""; $("crudDEF").value=x.def??""; $("crudSPD").value=x.spd??""; $("crudEXP").value=x.exp??""; $("crudGold").value=x.gold??"";
+    renderDropsEditor(normalizeDrops(x)); $("crudModal").classList.add("open");updateViewerPreview();
+  }
+  function close(){ $("crudModal").classList.remove("open"); }
+  function remove(id){
+    const x=data.find(v=>v.id===id);if(!x)return;
+    if(!confirm("「"+x.name+"」を削除しますか？"))return;
+    data=data.filter(v=>v.id!==id);save();render();$("crudStatus").textContent="「"+x.name+"」を削除しました。";
+  }
+  $("crudSave").onclick=function(){
+    const name=$("crudEnemyName").value.trim();if(!name){alert("敵名を入力してください。");return;}
+    const dungeonName=$("crudDungeon").value;
+    let dungeonId="";
+    try{
+      const ds=JSON.parse(localStorage.getItem("untroddentWikiDungeonCRUD_v1")||"[]");
+      dungeonId=ds.find(d=>String(d.name||"")===String(dungeonName))?.id||"";
+    }catch(_){}
+    const existing=editingId?data.find(v=>v.id===editingId):null; const drops=getDrops(); const first=drops[0]||{name:"—",rate:"—",effect:"—"};
+    const obj={dungeon:dungeonName,dungeonId:dungeonId||existing?.dungeonId||"",name,skill:$("crudSkill").value.trim()||"—",drops,drop:first.name,rate:first.rate,effect:first.effect,strategy:$("crudStrategy").value.trim()||"—",hp:$("crudHP").value.trim(),atk:$("crudATK").value.trim(),def:$("crudDEF").value.trim(),spd:$("crudSPD").value.trim(),exp:$("crudEXP").value.trim(),gold:$("crudGold").value.trim(),image:existing?.image||""};
+    if(editingId){Object.assign(data.find(v=>v.id===editingId),obj);$("crudStatus").textContent="敵データを更新しました。";}
+    else{obj.id="e_"+Date.now()+"_"+Math.random().toString(36).slice(2,7);data.push(obj);$("crudStatus").textContent="敵を追加しました。";}
+    save();render();close();
+  };
+  $("crudDelete").onclick=function(){if(editingId){remove(editingId);close();}};
+  $("crudAddDrop").onclick=function(){const cur=getDrops();cur.push({name:"",rate:"",effect:""});renderDropsEditor(cur);updateViewerPreview();};
+  $("crudCancel").onclick=close;
+  $("crudNew").onclick=openNew;
+  ["crudEnemyName","crudSkill","crudStrategy","crudHP","crudATK","crudDEF","crudSPD","crudEXP","crudGold"].forEach(id=>$(id)?.addEventListener("input",updateViewerPreview));
+  $("crudSearch").oninput=render;$("crudDungeonFilter").onchange=render;
+  $("crudExport").onclick=function(){
+    const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="enemy-drop-data.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  };
+  $("crudImport").onchange=function(e){
+    const file=e.target.files[0];if(!file)return;
+    const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!Array.isArray(x))throw 0;data=x;save();render();$("crudStatus").textContent="JSONを読み込みました。";}catch(_){alert("JSON形式が正しくありません。");}};r.readAsText(file);e.target.value="";
+  };
+  $("crudModal").addEventListener("click",e=>{if(e.target===$("crudModal"))close();});
+  render();
+
+  // HTML保存時にlocalStorageのCRUDデータを埋め込み直せるように、ダウンロード前に
+  // 現在データをwindow.__CRUD_EXPORT__へ反映するフックを追加。
+  const oldDownload=$("adminDownload");
+  if(oldDownload) oldDownload.onclick=function(){
+    let enemyData=[], dungeonData=[];
+    try{enemyData=JSON.parse(localStorage.getItem("untroddentWikiEnemyCRUD_v5")||"[]");}catch(e){}
+    try{dungeonData=JSON.parse(localStorage.getItem("untroddentWikiDungeonCRUD_v1")||"[]");}catch(e){}
+    const clone=document.documentElement.cloneNode(true);
+    const boot=document.createElement("script");
+    boot.textContent="window.__UNTRODDENT_CRUD_DATA__="+JSON.stringify(enemyData).replace(/</g,"\u003c")+";window.__UNTRODDENT_DUNGEON_DATA__="+JSON.stringify(dungeonData).replace(/</g,"\u003c")+";";
+    clone.querySelector("body").appendChild(boot);
+    const blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"});
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="index_updated.html";a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+    $("adminGithubStatus").textContent="敵・ダンジョン・画像・並び順を含むHTMLを保存しました。";
+  };
+})();
+</script>
+<script>
+(function(){
+  const KEY="untroddentWikiDungeonCRUD_v1";
+  // 以前のダンジョン完全CRUDに登録されていた5件を復旧。
+  // 閲覧者画面に実際に表示されていた説明文・系統効果を基準にし、
+  // 既存のlocalStorageにカスタム編集がある場合は上書きせず維持する。
+  const initial=[
+    {id:"d1",name:"ビギナーダンジョン",effect:"ドロップ率の分母が1減る",desc:"一般的な敵が出てくる入門向けダンジョン。まずはここで「ダンジョン選択 → Lv選択 → 魔法の方針 → 挑む」という流れを覚えます。",strategy:"基本的な敵から戦闘に慣れる。ダンジョン選択 → Lv選択 → 魔法の方針 → 挑む、の流れを確認する。"},
+    {id:"d2",name:"ノービスダンジョン",effect:"獲得ゴールドが15%上がる",desc:"ビギナーの次に挑戦するダンジョン。実画面では「ノービスダンジョン」「Lv3」の状態を確認できます。",strategy:"敵の攻撃を見ながら各個撃破する。Lvや報酬を確認してから挑戦する。"},
+    {id:"d3",name:"ホーリーダンジョン",effect:"獲得ガウルがたまに1増える",desc:"一般的な敵が出現する上位側のダンジョン。周回や報酬確認にも注目します。",strategy:"敵の属性や特殊攻撃に注意する。獲得ガウルがたまに1増える効果を活用して周回する。"},
+    {id:"d4",name:"エキスパートダンジョン",effect:"経験値が2倍になる",desc:"竜などが出現する高難度ダンジョン。能力値・HP・魔法などを確認してから挑戦します。",strategy:"強力な敵への対策を準備する。能力値・HP・魔法などを確認してから挑戦する。"},
+    {id:"d5",name:"アンドロデンダンジョン",effect:"なし",desc:"正体不明のボスが出現する最上位ダンジョン。ボス戦を意識した準備が必要です。",strategy:"ボス戦を想定した装備と編成を準備する。正体不明のボスに備えて十分に確認する。"}
+  ];
+  let data=[];
+  try{
+    const saved=JSON.parse(localStorage.getItem(KEY)||"null");
+    const embedded=window.__UNTRODDENT_DUNGEON_DATA__;
+    data=Array.isArray(saved)?saved:(Array.isArray(embedded)?embedded:[]);
+  }catch(e){data=Array.isArray(window.__UNTRODDENT_DUNGEON_DATA__)?window.__UNTRODDENT_DUNGEON_DATA__:[];}
+  // 空になってしまった旧版HTMLからも5件を自動復旧。
+  // 一部だけ残っている場合は不足分だけ追加し、ユーザー編集値は保持する。
+  const byId=new Map(data.map(x=>[String(x.id||""),x]));
+  const byName=new Map(data.map(x=>[String(x.name||""),x]));
+  initial.forEach(base=>{
+    const existing=byId.get(base.id)||byName.get(base.name);
+    if(!existing){data.push({...base});}
+    else{
+      if(!existing.id) existing.id=base.id;
+      if(existing.effect==null||existing.effect==="") existing.effect=base.effect;
+      if(existing.desc==null||existing.desc===""||existing.desc==="—") existing.desc=base.desc;
+      if(existing.strategy==null||existing.strategy===""||existing.strategy==="—") existing.strategy=base.strategy;
+    }
+  });
+  data=(data||[]).map(x=>{const drops=normalizeDrops(x); return {...x,drops,hp:x.hp??"",atk:x.atk??"",def:x.def??"",spd:x.spd??"",exp:x.exp??"",gold:x.gold??""};});
+  try{localStorage.setItem(KEY,JSON.stringify(data));}catch(_){}
+  let editingId=null;
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+  function save(){localStorage.setItem(KEY,JSON.stringify(data));}
+  function render(){
+    const q=$("dungeonCrudSearch").value.trim().toLowerCase();
+    const rows=data.filter(x=>!q||[x.name,x.effect,x.desc,x.strategy].join(" ").toLowerCase().includes(q));
+    $("dungeonCrudTbody").innerHTML=rows.length?rows.map(x=>`<tr>
+      <td><b>${esc(x.name)}</b></td><td>${esc(x.effect)}</td><td>${esc(x.desc)}</td>
+      <td>${esc(x.strategy)}</td><td class="dungeon-crud-actions">
+      <button class="btn dungeon-edit" data-id="${esc(x.id)}">編集</button>
+      <button class="btn dungeon-remove" data-id="${esc(x.id)}">削除</button></td>
+    </tr>`).join(""):`<tr><td colspan="5" class="crud-empty">該当するダンジョンがありません。</td></tr>`;
+    document.querySelectorAll(".dungeon-edit").forEach(b=>b.onclick=()=>openEdit(b.dataset.id));
+    document.querySelectorAll(".dungeon-remove").forEach(b=>b.onclick=()=>remove(b.dataset.id));
+  }
+  function openNew(){
+    editingId=null;$("dungeonCrudModalTitle").textContent="ダンジョンを追加";$("dungeonCrudDelete").style.display="none";
+    ["dungeonCrudName","dungeonCrudEffect","dungeonCrudDesc","dungeonCrudStrategy"].forEach(id=>$(id).value="");
+    $("dungeonCrudModal").classList.add("open");$("dungeonCrudName").focus();
+  }
+  function openEdit(id){
+    const x=data.find(v=>v.id===id);if(!x)return;
+    editingId=id;$("dungeonCrudModalTitle").textContent="ダンジョンを編集";$("dungeonCrudDelete").style.display="inline-block";
+    $("dungeonCrudName").value=x.name;$("dungeonCrudEffect").value=x.effect;$("dungeonCrudDesc").value=x.desc;$("dungeonCrudStrategy").value=x.strategy;
+    $("dungeonCrudModal").classList.add("open");
+  }
+  function close(){$("dungeonCrudModal").classList.remove("open");}
+  function remove(id){
+    const x=data.find(v=>v.id===id);if(!x)return;
+    if(!confirm("「"+x.name+"」を削除しますか？"))return;
+    data=data.filter(v=>v.id!==id);save();render();$("dungeonCrudStatus").textContent="「"+x.name+"」を削除しました。";
+  }
+  $("dungeonCrudSave").onclick=function(){
+    const name=$("dungeonCrudName").value.trim();
+    if(!name){alert("ダンジョン名を入力してください。");return;}
+    const obj={name,effect:$("dungeonCrudEffect").value.trim()||"なし",desc:$("dungeonCrudDesc").value.trim()||"—",strategy:$("dungeonCrudStrategy").value.trim()||"—"};
+    if(editingId){
+      const target=data.find(v=>v.id===editingId);
+      const oldName=target?.name||"";
+      Object.assign(target,obj);
+
+      // ★重要：ダンジョン名を変更しても、そこに所属している敵の
+      // dungeon / dungeonId を同時更新する。これで敵図鑑カードが孤立しない。
+      try{
+        const enemyKey="untroddentWikiEnemyCRUD_v5";
+        const enemies=JSON.parse(localStorage.getItem(enemyKey)||"[]");
+        const updated=enemies.map(e=>{
+          const sameId=String(e.dungeonId||"")===String(editingId);
+          const sameLegacyName=String(e.dungeon||"")===String(oldName);
+          return (sameId||sameLegacyName) ? {...e,dungeon:obj.name,dungeonId:editingId} : e;
+        });
+        localStorage.setItem(enemyKey,JSON.stringify(updated));
+      }catch(_){}
+      $("dungeonCrudStatus").textContent="ダンジョン情報を更新しました。所属する敵データの紐付けも維持しました。";
+    }
+    else{
+      obj.id="d_"+Date.now()+"_"+Math.random().toString(36).slice(2,7);
+      data.push(obj);
+      $("dungeonCrudStatus").textContent="ダンジョンを追加しました。";
+    }
+    save();render();close();
+  };
+  $("dungeonCrudDelete").onclick=function(){if(editingId){remove(editingId);close();}};
+  $("dungeonCrudCancel").onclick=close;$("dungeonCrudNew").onclick=openNew;
+  $("dungeonCrudSearch").oninput=render;
+  $("dungeonCrudExport").onclick=function(){
+    const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="dungeon-data.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  };
+  $("dungeonCrudImport").onchange=function(e){
+    const file=e.target.files[0];if(!file)return;
+    const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!Array.isArray(x))throw 0;data=x;save();render();$("dungeonCrudStatus").textContent="JSONを読み込みました。";}catch(_){alert("JSON形式が正しくありません。");}};r.readAsText(file);e.target.value="";
+  };
+  $("dungeonCrudModal").addEventListener("click",e=>{if(e.target===$("dungeonCrudModal"))close();});
+  render();
+
+  // HTML保存時は、必ず「現在のlocalStorageにある敵CRUD」と
+  // 「現在のダンジョンCRUD」を同時に埋め込む。
+  // 以前は window.__UNTRODDENT_CRUD_DATA__ を参照していたため、
+  // ダンジョンCRUDを変更してこの保存処理が実行されると敵データが [] になり、
+  // 公開後の「ダンジョン別・敵図鑑」からカードが全消失することがありました。
+  const adminDownloadHook=$("adminDownload");
+  if(adminDownloadHook) adminDownloadHook.onclick=function(){
+    let enemyData=[], dungeonData=data;
+    try{
+      enemyData=JSON.parse(localStorage.getItem("untroddentWikiEnemyCRUD_v5")||"[]");
+    }catch(_){ enemyData=[]; }
+
+    // 念のため、古い敵データにも dungeonId を付与して、
+    // ダンジョン名変更後も敵との紐付けを維持する。
+    const dungeonByName=new Map((dungeonData||[]).map(d=>[String(d.name||""),d]));
+    enemyData=(enemyData||[]).map(e=>{
+      const d=dungeonByName.get(String(e.dungeon||""));
+      return d && !e.dungeonId ? {...e,dungeonId:d.id} : e;
+    });
+
+    const clone=document.documentElement.cloneNode(true);
+    const boot=document.createElement("script");
+    boot.textContent=
+      "window.__UNTRODDENT_CRUD_DATA__="+JSON.stringify(enemyData).replace(/</g,"\\u003c")+
+      ";window.__UNTRODDENT_DUNGEON_DATA__="+JSON.stringify(dungeonData).replace(/</g,"\\u003c")+";";
+    clone.querySelector("body").appendChild(boot);
+
+    // 公開スナップショットも同じ最新データで再生成する。
+    const oldPublished=clone.querySelector("#untroddent-published-data");
+    if(oldPublished)oldPublished.remove();
+    const published={
+      version:window.UNTRODDENT_DATA_VERSION||"2.0",
+      updatedAt:new Date().toISOString(),
+      dungeons:dungeonData||[],
+      enemies:enemyData||[],
+      drops:(typeof window.getUntroddentPublishedData==="function" ? (window.getUntroddentPublishedData().drops||[]) : []),
+      updates:(typeof window.getUntroddentPublishedData==="function" ? (window.getUntroddentPublishedData().updates||[]) : [])
+    };
+    const snapshot=document.createElement("script");
+    snapshot.id="untroddent-published-data";
+    snapshot.type="application/json";
+    snapshot.textContent=JSON.stringify(published).replace(/</g,"\\u003c");
+    clone.querySelector("body").appendChild(snapshot);
+
+    const blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"});
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="index_updated.html";
+    a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+    $("adminGithubStatus").textContent="敵・ダンジョン・画像・並び順を含む最新データでHTMLを保存しました。";
+  };
+})();
+</script>
+<script>
+(function(){
+  const KEY="untroddentWikiEnemyCRUD_v5";
+  const originalInit = window.__UNTRODDENT_CRUD_DATA__;
+  const $=id=>document.getElementById(id);
+
+  // Hook into the existing CRUD data after its script has initialized.
+  function getData(){
+    try{return JSON.parse(localStorage.getItem(KEY)||"null") || window.__UNTRODDENT_CRUD_DATA__ || [];}
+    catch(e){return window.__UNTRODDENT_CRUD_DATA__ || [];}
+  }
+  function setData(d){localStorage.setItem(KEY,JSON.stringify(d));}
+
+  const fileInput=$("crudImageFile");
+  const preview=$("crudImagePreview");
+  let pendingImage=null;
+
+  function showPreview(src){
+    pendingImage=src||"";
+    preview.innerHTML=src?`<img src="${src}" alt=""><span>現在の画像</span>`:"";
+  }
+
+  if(fileInput){
+    fileInput.addEventListener("change",function(){
+      const file=this.files[0]; if(!file)return;
+      if(!file.type.startsWith("image/")){alert("画像ファイルを選択してください。");return;}
+      if(file.size>2*1024*1024){alert("画像は2MB以下にしてください。");this.value="";return;}
+      const reader=new FileReader();
+      reader.onload=()=>showPreview(reader.result);
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Patch modal open/save behavior by observing clicks.
+  document.addEventListener("click",function(e){
+    const edit=e.target.closest(".crud-edit");
+    if(edit){
+      setTimeout(()=>{
+        const d=getData().find(x=>x.id===edit.dataset.id);
+        showPreview(d?.image||"");
+      },30);
+    }
+    if(e.target.id==="crudNew"){
+      setTimeout(()=>showPreview(""),30);
+    }
+  });
+
+  // Replace image on save by watching the modal save button.
+  const saveBtn=$("crudSave");
+  if(saveBtn){
+    saveBtn.addEventListener("click",function(){
+      setTimeout(()=>{
+        if(pendingImage!==null){
+          const d=getData();
+          // Match by the stable CRUD id, not the enemy name.
+          const found=d.find(x=>x.id===editingId);
+          if(found){found.image=pendingImage;setData(d);}
+          pendingImage=null;
+          if(fileInput)fileInput.value="";
+          renderGallery();
+          // Re-render table by triggering search input.
+          $("crudSearch")?.dispatchEvent(new Event("input"));
+        }
+      },50);
+    });
+  }
+
+  function renderGallery(){
+    const root=$("enemyGalleryAdmin");if(!root)return;
+    const d=getData();
+    root.innerHTML=d.length?d.map(x=>`<div class="gallery-admin-card ${x.image?"":"no-image"}">
+      ${x.image?`<img src="${esc(x.image)}" alt="${esc(x.name)}">`:`<div class="small" style="text-align:center">🖼️ 画像未登録</div>`}
+      <b>${esc(x.name||"名称未設定")}</b>
+      <div class="small">${esc(x.dungeon||"未分類")}</div>
+      <div class="viewer-detail"><b>固有スキル：</b>${esc(x.skill||"—")}</div>
+      <div class="viewer-detail"><b>ドロップ：</b>${esc(x.drop||"—")}</div>
+      <div class="viewer-detail"><b>ドロップ率：</b>${esc(x.rate||"—")}</div>
+      <div class="viewer-detail"><b>ドロップ効果：</b>${esc(x.effect||"—")}</div>
+      <div class="viewer-detail"><b>モブ詳細・攻略：</b>${esc(x.strategy||"—")}</div>
+      <div class="enemy-card-actions">
+        <button type="button" class="btn crud-edit" data-id="${esc(x.id)}">✏️ 編集</button>
+        <button type="button" class="btn crud-remove" data-id="${esc(x.id)}">🗑️ 削除</button>
+      </div>
+    </div>`).join(""):`<div class="crud-empty">敵図鑑カードが登録されていません。「＋ 敵を追加」から登録できます。</div>`;
+
+    root.querySelectorAll(".crud-edit").forEach(b=>b.addEventListener("click",()=>{
+      const tableButton=document.querySelector(`.crud-table .crud-edit[data-id="${CSS.escape(b.dataset.id)}"]`);
+      if(tableButton)tableButton.click();
+    }));
+    root.querySelectorAll(".crud-remove").forEach(b=>b.addEventListener("click",()=>{
+      const tableButton=document.querySelector(`.crud-table .crud-remove[data-id="${CSS.escape(b.dataset.id)}"]`);
+      if(tableButton)tableButton.click();
+      setTimeout(renderGallery,60);
+    }));
+  }
+  window.__UNTRODDENT_REFRESH_ENEMY_GALLERY=renderGallery;
+  renderGallery();
+
+  // Drag/drop ordering. We attach after every render by observing tbody mutations.
+  const tbody=$("crudTbody");
+  function bindDrag(){
+    if(!tbody)return;
+    tbody.querySelectorAll("tr").forEach(row=>{
+      row.draggable=true;
+      row.addEventListener("dragstart",()=>row.classList.add("dragging"));
+      row.addEventListener("dragend",()=>row.classList.remove("dragging"));
+      row.addEventListener("dragover",e=>{
+        e.preventDefault();
+        const dragging=tbody.querySelector(".dragging");
+        if(!dragging||dragging===row)return;
+        const rect=row.getBoundingClientRect();
+        const after=e.clientY>rect.top+rect.height/2;
+        tbody.insertBefore(dragging,after?row.nextSibling:row);
+      });
+    });
+  }
+  const obs=new MutationObserver(bindDrag);
+  if(tbody)obs.observe(tbody,{childList:true});
+  bindDrag();
+
+  $("crudSortSave")?.addEventListener("click",function(){
+    const d=getData();
+    const ids=[...tbody.querySelectorAll("tr")].map(r=>r.querySelector(".crud-edit")?.dataset.id).filter(Boolean);
+    if(ids.length){
+      const map=new Map(d.map(x=>[x.id,x]));
+      const reordered=ids.map(id=>map.get(id)).filter(Boolean);
+      const rest=d.filter(x=>!ids.includes(x.id));
+      setData([...reordered,...rest]);
+      $("crudStatus").textContent="現在表示中の敵の並び順を保存しました。";
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+"use strict";
+const OWNER="tsuritetsu-eng", REPO="untroddent-wiki", API="https://api.github.com";
+const $=id=>document.getElementById(id), status=$("reliableGithubStatus");
+
+function authHeaders(token){
+  return {"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"};
+}
+async function gh(url,token,options={}){
+  let res;
+  try{
+    res=await fetch(url,{
+      ...options,
+      cache:"no-store",
+      headers:{...authHeaders(token),...(options.headers||{})}
+    });
+  }catch(e){
+    const err=new Error(
+      "GitHub APIへ接続できませんでした。PCのブラウザ拡張機能・VPN・プロキシ・ネットワーク設定でapi.github.comがブロックされていないか確認してください。"+
+      (e?.message?"\n"+e.message:"")
+    );
+    err.cause=e;
+    throw err;
+  }
+  let body={};
+  try{body=await res.json();}catch(_){body={};}
+  if(!res.ok){
+    const e=new Error(body.message||("HTTP "+res.status));
+    e.status=res.status; e.body=body; throw e;
+  }
+  return body;
+}
+function encodePath(path){return path.split("/").map(encodeURIComponent).join("/");}
+function b64Utf8(text){
+  const bytes=new TextEncoder().encode(String(text));
+  let out="";
+  // PCブラウザでは大きな配列をspreadすると「Maximum call stack size exceeded」
+  // になることがあるため、引数数を小さく固定して安全に変換する。
+  const CHUNK=0x2000;
+  for(let i=0;i<bytes.length;i+=CHUNK){
+    out+=String.fromCharCode.apply(null,bytes.subarray(i,i+CHUNK));
+  }
+  return btoa(out);
+}
+function makeCurrentHTML(){
+  if(typeof window.exportUntroddentPublishedHTML==="function")return window.exportUntroddentPublishedHTML();
+  const clone=document.documentElement.cloneNode(true);
+  clone.querySelectorAll('input[type="password"]').forEach(el=>{el.value="";el.removeAttribute("value");});
+  return "<!doctype html>\n"+clone.outerHTML;
+}
+function errorText(e,stage){
+  if(e?.status===401)return "401 認証失敗：GitHubアクセストークンが無効・期限切れ・取り消し済みです。";
+  if(e?.status===403)return "403 権限不足：Fine-grained PATのRepository accessで「tsuritetsu-eng/untroddent-wiki」を許可し、Contentsを「Read and write」にしてください。ブランチ保護で直接更新が禁止されている場合もあります。";
+  if(e?.status===404)return "404 対象が見つかりません：リポジトリ、ブランチ、または対象HTML（通常はindex.html）を確認してください。";
+  if(e?.status===409)return "409 更新競合：GitHub側で変更が競合しました。最新SHAを取得して再試行してください。";
+  if(e?.status===422)return "422 GitHubが更新を拒否しました：対象パス、SHA、ブランチ、またはブランチ保護設定を確認してください。";
+  return (stage?stage+"：":"")+(e?.message||"不明なエラー");
+}
+async function getRepo(token){return gh(API+"/repos/"+OWNER+"/"+REPO,token);}
+async function getFile(token,branch,path){return gh(API+"/repos/"+OWNER+"/"+REPO+"/contents/"+encodePath(path)+"?ref="+encodeURIComponent(branch),token);}
+
+function saveUpdatedHTML(){
+  try{
+    const content=makeCurrentHTML();
+    if(!content||content.length<1000)throw new Error("更新HTMLの生成に失敗しました。ページを再読み込みしてから再試行してください。");
+    const blob=new Blob([content],{type:"text/html;charset=utf-8"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url; a.download="index_updated.html";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1500);
+    status.textContent="💾 更新HTMLを保存しました。\n\nGitHubへ反映する前に、現在の管理画面データを含んだHTMLを手元に保存できます。\nファイル名: index_updated.html";
+  }catch(e){status.textContent="❌ 更新HTMLの保存に失敗しました\n\n"+(e?.message||e);}
+}
+const saveHtmlButton=$("reliableGithubSave");
+if(saveHtmlButton)saveHtmlButton.onclick=saveUpdatedHTML;
+
+async function getPages(token){return gh(API+"/repos/"+OWNER+"/"+REPO+"/pages",token);}
+async function verifyPages(token,branch,path){
+  let page=null, pagesApiError="";
+  try{ page=await getPages(token); }catch(e){
+    pagesApiError=e?.message||String(e);
+  }
+  const url=(page?.html_url||("https://"+OWNER+".github.io/"+REPO+"/")).replace(/\/$/,"")+"/";
+  const started=Date.now(), timeout=45000;
+  let last="";
+  while(Date.now()-started<timeout){
+    try{
+      const r=await fetch(url+"?github_pages_check="+Date.now(),{cache:"no-store",redirect:"follow"});
+      last="HTTP "+r.status+" / "+r.url;
+      if(r.ok){
+        const text=await r.text();
+        const targetName=path.split("/").pop();
+        const looksLikeSite=text.includes("アンドロデン")||text.includes("untroddent")||text.includes(targetName);
+        if(looksLikeSite)return {ok:true,configured:true,url,detail:last};
+      }
+    }catch(e){last=e?.message||String(e);}
+    status.textContent="⑥ GitHub Pagesの公開反映を確認中…\n\n公開処理には少し時間がかかる場合があります。\n"+last;
+    await new Promise(r=>setTimeout(r,3000));
+  }
+  return {ok:false,configured:!!page,url,detail:last||pagesApiError||"公開URLを確認できませんでした"};
+}
+
+async function diagnose(){
+  const token=$("reliableGithubToken").value.trim();
+  if(!token){status.textContent="❌ GitHubアクセストークンを入力してください。";return;}
+  status.textContent="① GitHubへの認証を確認中…";
+  const repo=await getRepo(token);
+  const branch=$("reliableGithubBranch").value.trim()||repo.default_branch||"main";
+  const path=$("reliableGithubPath").value.trim()||"index.html";
+  if(!/^.+\.html?$/i.test(path))throw new Error("対象HTMLのパスが不正です："+path);
+  status.textContent="② 「"+path+"」の存在と最新SHAを確認中…";
+  const file=await getFile(token,branch,path);
+  $("reliableGithubBranch").value=branch;
+  $("reliableGithubPath").value=path;
+  status.textContent="✅ 接続・権限・対象ファイルの確認に成功しました。\n\n"+
+    "リポジトリ: "+repo.full_name+"\n"+
+    "ブランチ: "+branch+"\n"+
+    "対象: "+path+"\n"+
+    "現在のファイルSHA: "+file.sha+"\n\n"+
+    "このまま「☁️ GitHubへ反映」を押してください。";
+}
+$("reliableGithubDiagnose").onclick=async function(){
+  this.disabled=true;
+  try{await diagnose();}
+  catch(e){status.textContent="❌ 接続診断に失敗しました\n\n"+errorText(e,"診断");}
+  finally{this.disabled=false;}
+};
+
+const commitButton=$("reliableGithubCommit");
+if(commitButton) commitButton.onclick=async function(){
+  const btn=this, token=$("reliableGithubToken").value.trim();
+  if(!token){status.textContent="❌ GitHubアクセストークンを入力してください。";return;}
+  btn.disabled=true;
+  try{
+    status.textContent="① GitHubのリポジトリを確認中…";
+    const repo=await getRepo(token);
+    const branch=$("reliableGithubBranch").value.trim()||repo.default_branch||"main";
+    const path=$("reliableGithubPath").value.trim()||"index.html";
+    if(!/^.+\.html?$/i.test(path))throw new Error("対象HTMLのパスが不正です："+path);
+
+    status.textContent="① GitHubの最新ファイルSHAを取得中…";
+    let current=await getFile(token,branch,path);
+    if(!current.sha)throw new Error("最新SHAを取得できませんでした。");
+
+    status.textContent="② 管理画面の最新データから公開HTMLを生成中…";
+    const content=makeCurrentHTML();
+    if(!content||content.length<1000)throw new Error("公開HTMLの生成に失敗しました。ページを再読み込みしてから再試行してください。");
+
+    const body={
+      message:$("reliableGithubMessage").value.trim()||"Update tutorial wiki from admin panel",
+      content:b64Utf8(content),
+      sha:current.sha,
+      branch
+    };
+
+    status.textContent="③ GitHubへ1回目の更新を実行中…";
+    let result;
+    try{
+      result=await gh(API+"/repos/"+OWNER+"/"+REPO+"/contents/"+encodePath(path),token,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    }catch(e){
+      if(e.status!==409)throw e;
+      status.textContent="④ 更新競合を検出。最新SHAを再取得して自動再試行中…";
+      current=await getFile(token,branch,path);
+      body.sha=current.sha;
+      result=await gh(API+"/repos/"+OWNER+"/"+REPO+"/contents/"+encodePath(path),token,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+    }
+
+    status.textContent="⑤ 更新後のGitHubファイルを再取得して確認中…";
+    const verify=await getFile(token,branch,path);
+    if(!result?.commit?.sha||!verify?.sha)throw new Error("更新後のGitHubファイルを確認できませんでした。");
+
+    status.textContent="⑥ GitHub Pagesの公開反映を確認中…\n\nコミットは成功しました。公開サイトへの反映を自動確認しています。";
+    const pages=await verifyPages(token,branch,path);
+    if(pages.ok){
+      status.textContent="🎉 GitHubへの反映＋GitHub Pages公開確認が完了しました！\n\n"+
+        "対象: "+path+"\n"+
+        "ブランチ: "+branch+"\n"+
+        "コミットSHA: "+result.commit.sha+"\n"+
+        "更新後ファイルSHA: "+verify.sha+"\n\n"+
+        "✅ GitHub上のファイル更新を確認済み\n"+
+        "✅ GitHub Pagesの公開URLへのアクセスも確認済み\n"+
+        "公開URL: "+pages.url+"\n"+
+        (result.commit.html_url?"\nコミット確認: "+result.commit.html_url:"");
+    }else{
+      status.textContent="⚠️ GitHubへの反映は完了しましたが、GitHub Pagesの公開確認がまだ完了していません。\n\n"+
+        "対象: "+path+"\nコミットSHA: "+result.commit.sha+"\n"+
+        (pages.url?"\n公開URL: "+pages.url:"\n")+
+        "\n最後の確認結果: "+(pages.detail||pages.message||"公開URLを確認できませんでした")+"\n\n数分後にもう一度「GitHubへ反映」を実行すると再確認できます。";
+    }
+    $("reliableGithubToken").value="";
+  }catch(e){
+    status.textContent="❌ GitHubへの反映に失敗しました\n\n"+errorText(e,"反映");
+  }finally{btn.disabled=false;}
+};
+})();
+</script>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id), KEY="untroddentWikiAnalyticsGoatCode_v1";
+const input=$("analyticsGoatCode"), status=$("analyticsStatus"), cards=$("analyticsCards");
+if(!input)return;
+input.value=(localStorage.getItem(KEY)||"tsuritetsu9306").trim();
+function clean(v){return String(v||"").trim().replace(/[^a-zA-Z0-9_-]/g,"");}
+function save(){const c=clean(input.value);input.value=c;if(!c){localStorage.removeItem(KEY);status.textContent="❌ GoatCounterサイトコードを入力してください。";cards.style.display="none";return;}localStorage.setItem(KEY,c);status.textContent="✅ 保存しました。GitHubへ反映すると公開サイトで計測されます。";}
+function date(d){return d.toISOString().slice(0,10);}
+function fmt(v){return Number(v||0).toLocaleString("ja-JP");}
+async function getCount(c,start,end){const path=location.pathname||"/";const u="https://"+c+".goatcounter.com/counter/"+encodeURIComponent(path)+".json?start="+encodeURIComponent(start)+"&end="+encodeURIComponent(end);const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);return r.json();}
+async function getTotal(c){const path=location.pathname||"/";const u="https://"+c+".goatcounter.com/counter/"+encodeURIComponent(path)+".json";const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);return r.json();}
+async function load(){const c=clean(input.value);if(!c){status.textContent="❌ GoatCounterサイトコードを入力してください。";cards.style.display="none";return;}localStorage.setItem(KEY,c);status.textContent="📊 閲覧数を取得しています…";try{const now=new Date(),today=date(now),d7=new Date(now),d30=new Date(now);d7.setDate(d7.getDate()-6);d30.setDate(d30.getDate()-29);const [a,b,d,t]=await Promise.all([getCount(c,today,today),getCount(c,date(d7),today),getCount(c,date(d30),today),getTotal(c)]);$("analyticsToday").textContent=fmt(a.count);$("analytics7d").textContent=fmt(b.count);$("analytics30d").textContent=fmt(d.count);$("analyticsTotal").textContent=fmt(t.count);cards.style.display="grid";status.textContent="✅ 更新しました。取得時刻: "+new Date().toLocaleString("ja-JP");}catch(e){cards.style.display="none";status.textContent="❌ アナリティクス取得失敗。サイトコードとGoatCounter設定を確認してください。\n"+(e.message||e);}}
+$("analyticsSave").onclick=save;$("analyticsLoad").onclick=load;if(input.value)load();
+})();
+</script>
+<script>
+(function(){
+"use strict";
+window.UNTRODDENT_DATA_VERSION="2.0";
+
+function readJSON(keys, fallback){
+  for(const k of keys){
+    try{
+      const v=localStorage.getItem(k);
+      if(v!==null){
+        const x=JSON.parse(v);
+        if(x!==null) return x;
+      }
+    }catch(_){}
+  }
+  return fallback;
+}
+
+function collectPublishedData(){
+  const data={
+    version:window.UNTRODDENT_DATA_VERSION,
+    updatedAt:new Date().toISOString(),
+    dungeons:readJSON([
+      "untroddentWikiDungeonCRUD_v1",
+      "untroddentWikiDungeons_v1",
+      "dungeonData"
+    ],[]),
+    enemies:readJSON([
+      "untroddentWikiEnemyCRUD_v5",
+      "untroddentWikiEnemies_v1",
+      "enemyData"
+    ],[]),
+    drops:readJSON([
+      "untroddentWikiDropCRUD_v1",
+      "untroddentWikiDrops_v1",
+      "dropData"
+    ],[]),
+    updates:readJSON([
+      "untroddentWikiUpdates_v1",
+      "updateHistory",
+      "untroddentWikiUpdateHistory_v1"
+    ],[])
+  };
+  return data;
+}
+
+window.getUntroddentPublishedData=collectPublishedData;
+
+window.exportUntroddentPublishedHTML=function(){
+  const clone=document.documentElement.cloneNode(true);
+  const data=collectPublishedData();
+
+  clone.querySelectorAll('input[type="password"]').forEach(el=>{
+    el.value="";el.removeAttribute("value");
+  });
+  clone.querySelectorAll('#reliableGithubToken,#githubToken,#adminPass').forEach(el=>{
+    el.value="";el.removeAttribute("value");
+  });
+
+  const old=clone.querySelector("#untroddent-published-data");
+  if(old)old.remove();
+
+  const s=document.createElement("script");
+  s.id="untroddent-published-data";
+  s.type="application/json";
+  s.textContent=JSON.stringify(data).replace(/</g,"\\u003c");
+  clone.querySelector("body").appendChild(s);
+
+  const analyticsCode=(localStorage.getItem("untroddentWikiAnalyticsGoatCode_v1")||"tsuritetsu9306").trim().replace(/[^a-zA-Z0-9_-]/g,"");
+  clone.querySelectorAll("#untroddent-goatcounter-script").forEach(el=>el.remove());
+  if(analyticsCode){
+    const tracker=document.createElement("script");
+    tracker.id="untroddent-goatcounter-script";
+    tracker.async=true;
+    tracker.setAttribute("data-goatcounter","https://"+analyticsCode+".goatcounter.com/count");
+    tracker.src="https://gc.zgo.at/count.js";
+    clone.querySelector("body").appendChild(tracker);
+  }
+
+  return "<!doctype html>\n"+clone.outerHTML;
+};
+
+window.loadUntroddentPublishedData=function(){
+  const el=document.getElementById("untroddent-published-data");
+  if(!el)return null;
+  try{return JSON.parse(el.textContent)}catch(_){return null}
+};
+
+// Apply the published snapshot to viewer hooks when they exist.
+// This is deliberately non-destructive: existing UI/layout stays untouched.
+window.applyUntroddentViewerData=function(data){
+  if(!data)return false;
+  window.UNTRODDENT_VIEWER_DATA=data;
+
+  // Common variable names used by the CRUD/viewer implementations.
+  window.dungeonData=data.dungeons||[];
+  window.enemyData=data.enemies||[];
+  window.dropData=data.drops||[];
+  window.updateHistory=data.updates||[];
+
+  // If a renderer was exposed by the existing site, ask it to redraw.
+  const hooks=[
+    "renderAll",
+    "renderViewer",
+    "renderDungeons",
+    "renderEnemies",
+    "renderDungeonList",
+    "refreshViewer",
+    "refreshAll"
+  ];
+  for(const name of hooks){
+    try{
+      if(typeof window[name]==="function") window[name](data);
+    }catch(_){}
+  }
+  return true;
+};
+
+document.addEventListener("DOMContentLoaded",function(){
+  const data=loadUntroddentPublishedData();
+  if(data) applyUntroddentViewerData(data);
+});
+})();
+</script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const b=$("crudSyncCheck"),s=$("crudSyncStatus");
+if(!b)return;
+b.onclick=function(){
+  const d=(typeof window.getUntroddentPublishedData==="function")?window.getUntroddentPublishedData():null;
+  if(!d){s.textContent="❌ 公開データ生成機能が見つかりません。";return;}
+  const keys=[
+    "untroddentWikiDungeonCRUD_v1",
+    "untroddentWikiEnemyCRUD_v5",
+    "untroddentWikiDropCRUD_v1",
+    "untroddentWikiUpdates_v1"
+  ];
+  const lines=[];
+  for(const k of keys){
+    let n=0,exists=false;
+    try{const v=localStorage.getItem(k);exists=v!==null;n=exists?(JSON.parse(v)||[]).length:0}catch(_){}
+    lines.push(k+": "+(exists?n+"件":"未保存"));
+  }
+  lines.push("");
+  lines.push("公開スナップショット:");
+  lines.push("ダンジョン: "+(d.dungeons||[]).length+"件");
+  lines.push("敵: "+(d.enemies||[]).length+"件");
+  lines.push("ドロップ: "+(d.drops||[]).length+"件");
+  lines.push("更新履歴: "+(d.updates||[]).length+"件");
+  lines.push("");
+  lines.push("※ ここで件数が正しいのに閲覧者画面が古い場合、閲覧者側レンダラーが固定データを使っている可能性があります。");
+  s.textContent=lines.join("\n");
+};
+})();
+</script>
+<script>
+(function(){
+"use strict";
+
+function esc(v){
+  return String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+}
+function getPublished(){
+  try{
+    const el=document.getElementById("untroddent-published-data");
+    if(el){
+      const d=JSON.parse(el.textContent);
+      if(d && Array.isArray(d.dungeons)) return d;
+    }
+  }catch(_){}
+  if(window.UNTRODDENT_VIEWER_DATA) return window.UNTRODDENT_VIEWER_DATA;
+  return null;
+}
+function rankClass(i){
+  return i===3?"rank ex":i===4?"rank boss":"rank";
+}
+function renderDungeonViewer(data){
+  const sec=document.querySelector("#dungeons");
+  if(!sec || !Array.isArray(data.dungeons) || !data.dungeons.length)return;
+
+  const ds=data.dungeons;
+  const enemies=Array.isArray(data.enemies)?data.enemies:[];
+
+  // Keep the section title and intro, but replace the hard-coded dungeon content.
+  const title=sec.querySelector("h2");
+  const intro=sec.querySelector("p.muted");
+  sec.innerHTML="";
+  if(title)sec.appendChild(title);
+  if(intro)sec.appendChild(intro);
+
+  const cards=document.createDocumentFragment();
+
+  ds.forEach((d,i)=>{
+    const box=document.createElement("div");
+    box.className="dungeon";
+    box.innerHTML=
+      '<h3><span class="'+rankClass(i)+'">★'+(i+1)+'</span> '+esc(d.name||"名称未設定")+'</h3>'+
+      '<p>'+esc(d.desc||"—")+'<br><b>系統効果：</b>'+esc(d.effect||"なし")+'</p>';
+    cards.appendChild(box);
+  });
+  sec.appendChild(cards);
+
+  const table=document.createElement("table");
+  table.innerHTML="<tr><th>種類</th><th>敵</th><th>攻略の位置づけ</th><th>系統効果</th></tr>";
+  ds.forEach(d=>{
+    const list=enemies.filter(e=>String(e.dungeonId||"")===String(d.id||"") || (!e.dungeonId && String(e.dungeon||"")===String(d.name||"")));
+    const enemyText=list.length
+      ? list.map(e=>e.name).join("、")
+      : "登録なし";
+    const tr=document.createElement("tr");
+    tr.innerHTML=
+      "<td>"+esc(d.name||"")+"</td>"+
+      "<td>"+esc(enemyText)+"</td>"+
+      "<td>"+esc(d.strategy||"—")+"</td>"+
+      "<td>"+esc(d.effect||"なし")+"</td>";
+    table.appendChild(tr);
+  });
+  sec.appendChild(table);
+}
+function renderAllFromPublished(){
+  const d=getPublished();
+  if(!d)return;
+  window.UNTRODDENT_VIEWER_DATA=d;
+  window.dungeonData=d.dungeons||[];
+  window.enemyData=d.enemies||[];
+  window.dropData=d.drops||[];
+  window.updateHistory=d.updates||[];
+  renderDungeonViewer(d);
+}
+if(document.readyState==="loading"){
+  document.addEventListener("DOMContentLoaded",renderAllFromPublished);
+}else{
+  renderAllFromPublished();
+}
+window.renderUntroddentViewerFromPublishedData=renderAllFromPublished;
+})();
+</script>
+<script>
+/* ==========================================================
+   閲覧者：ダンジョン別・敵・ドロップ品カード 完全同期レンダラー
+   - ダンジョンCRUDの名称 / 系統効果 / 説明 / 攻略を使用
+   - 敵CRUDの dungeonId を最優先して所属ダンジョンを決定
+   - dungeonId がない旧データはダンジョン名で互換表示
+   - 敵の追加・編集・削除、複数ドロップ、ステータス、画像を即時反映
+   - ダンジョンの追加・編集・削除も即時反映
+   ========================================================== */
+(function(){
+  const DKEY="untroddentWikiDungeonCRUD_v1";
+  const EKEY="untroddentWikiEnemyCRUD_v5";
+  const rootId="viewerEnemyDungeonList";
+  let lastSignature="";
+
+  const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[m]));
+
+  function read(key, embedded, fallback){
+    try{
+      const raw=localStorage.getItem(key);
+      if(raw!==null){
+        const parsed=JSON.parse(raw);
+        if(Array.isArray(parsed)) return parsed;
+      }
+    }catch(_){ }
+    if(Array.isArray(embedded)) return embedded;
+    return fallback;
+  }
+
+  const fallbackDungeons=[
+    {id:"d1",name:"ビギナーダンジョン",effect:"ドロップ率の分母が1減る",exp:"1,620 XP",desc:"一般的な敵が出てくる入門向けダンジョン。",strategy:"基本的な敵から戦闘に慣れる。"},
+    {id:"d2",name:"ノービスダンジョン",effect:"獲得ゴールドが15%上がる",exp:"4,860 XP",desc:"ビギナーの次に挑戦するダンジョン。",strategy:"敵の攻撃を見ながら各個撃破する。"},
+    {id:"d3",name:"ホーリーダンジョン",effect:"獲得ガウルがたまに1増える",exp:"16,200 XP",desc:"一般的な敵が出現する上位側のダンジョン。",strategy:"敵の属性や特殊攻撃に注意する。"},
+    {id:"d4",name:"エキスパートダンジョン",effect:"経験値が2倍になる",exp:"36,450 XP",desc:"竜などが出現する高難度ダンジョン。",strategy:"強力な敵への対策を準備する。"},
+    {id:"d5",name:"アンドロデンダンジョン",effect:"なし",exp:"24,350 XP",desc:"正体不明のボスが出現する最上位ダンジョン。",strategy:"ボス戦を想定した装備と編成を準備する。"}
+  ];
+
+  function getDungeons(){
+    const source=read(DKEY,window.__UNTRODDENT_DUNGEON_DATA__,fallbackDungeons);
+    const xp={d1:"1,620 XP",d2:"4,860 XP",d3:"16,200 XP",d4:"36,450 XP",d5:"24,350 XP"};
+    return (source||[]).map(d=>({...d,exp:xp[String(d.id||"")]||d.exp||"未設定"}));
+  }
+  function getEnemies(){
+    // 公開スナップショットを基準にし、閲覧者の古いlocalStorageにも
+    // 新しく公開された敵カードを追加して表示する。
+    let published=[];
+    try{
+      const el=document.getElementById("untroddent-published-data");
+      const snap=el?JSON.parse(el.textContent):null;
+      published=Array.isArray(snap?.enemies)?snap.enemies:[];
+    }catch(_){ published=[]; }
+    const saved=read(EKEY,window.__UNTRODDENT_CRUD_DATA__,[]);
+    const merged=new Map(published.map(e=>[String(e.id||e.name||""),e]));
+    (saved||[]).forEach(e=>merged.set(String(e.id||e.name||""),e));
+    return [...merged.values()];
+  }
+  function normalizeDrops(e){
+    if(Array.isArray(e?.drops) && e.drops.length){
+      return e.drops.map(d=>({name:d?.name||"—",rate:d?.rate||"—",effect:d?.effect||"—"}));
+    }
+    if(e?.drop || e?.rate || e?.effect){
+      return [{name:e.drop||"—",rate:e.rate||"—",effect:e.effect||"—"}];
+    }
+    return [];
+  }
+  function dungeonRank(i){
+    const n=i+1;
+    return n===4?' ex':(n===5?' boss':'');
+  }
+  const SPAWN_RATES={
+    "スライム":"30%","くろいコウモリ":"24%","しろいコウモリ":"18%",
+    "馬刺しになるはずだった馬":"12%","モルモットっぽいねこ":"10%","こわれたロボット":"6%",
+    "ふとったいぬ":"14%","ツタンカー猫":"16%","マリーアンドネット":"16%",
+    "歩く死体":"24%","船の船長":"12%","船員":"18%",
+    "パラディン":"64%","英雄アーサー":"9%","雷神ソー":"15%",
+    "八岐大蛇":"6%","クロノス":"6%","レッドドラゴン":"22%",
+    "ブルードラゴン":"22%","ホワイトドラゴン":"22%","ブラックドラゴン":"22%",
+    "ゴーストドラゴン":"11%"
+  };
+  function enemyCard(e){
+    const drops=normalizeDrops(e);
+    const skill=e.skill||"—";
+    const strategy=e.strategy||"—";
+    const spawnRate=SPAWN_RATES[String(e.name||'').trim()];
+    const stats=[['HP',e.hp],['ATK',e.atk],['DEF',e.def],['SPD',e.spd],['EXP',e.exp],['GOLD',e.gold],['スポーン率',spawnRate]]
+      .filter(x=>x[1]!==undefined && x[1]!==null && String(x[1]).trim()!=="");
+    let html='<div class="enemy-card">';
+    if(e.image){ html+='<img src="'+esc(e.image)+'" alt="'+esc(e.name||'敵')+'" style="width:100%;max-height:180px;object-fit:contain;border-radius:7px;margin-bottom:9px">'; }
+    html+='<h4>'+esc(e.name||"名称未設定")+'</h4>';
+    html+='<p class="enemy-label">固有スキル</p><p>'+esc(skill)+'</p>';
+    html+='<div class="drop"><b>ドロップ：</b>';
+    if(drops.length){
+      html+=drops.map(d=>'<div class="enemy-drop-item"><b>'+esc(d.name)+'</b> <span>（'+esc(d.rate)+'）</span>'+(d.effect&&d.effect!=="—"?'<br><span class="small">'+esc(d.effect)+'</span>':'')+'</div>').join('');
+    }else html+='<div>登録なし</div>';
+    html+='</div>';
+    if(stats.length){
+      html+='<div class="enemy-stats">'+stats.map(x=>'<div class="enemy-stat"><b>'+x[0]+'</b><span>'+esc(x[1])+'</span></div>').join('')+'</div>';
+    }
+    if(strategy && strategy!=="—") html+='<p class="small"><b>攻略：</b>'+esc(strategy)+'</p>';
+    html+='</div>';
+    return html;
+  }
+
+  function render(force){
+    const root=document.getElementById(rootId);
+    if(!root)return;
+    const dungeons=getDungeons();
+    const enemies=getEnemies();
+    const signature=JSON.stringify({d:dungeons,e:enemies});
+    if(!force && signature===lastSignature)return;
+    lastSignature=signature;
+
+    const byId=new Map(dungeons.map(d=>[String(d.id||''),d]));
+    const byName=new Map(dungeons.map(d=>[String(d.name||''),d]));
+    const grouped=new Map();
+    dungeons.forEach(d=>grouped.set(String(d.id||d.name),[]));
+    const orphans=[];
+
+    enemies.forEach(e=>{
+      let d=null;
+      if(e && e.dungeonId!=null) d=byId.get(String(e.dungeonId));
+      if(!d && e && e.dungeon) d=byName.get(String(e.dungeon));
+      if(d){
+        const key=String(d.id||d.name);
+        if(!grouped.has(key))grouped.set(key,[]);
+        grouped.get(key).push(e);
+      }else if(e){ orphans.push(e); }
+    });
+
+    let html='';
+    dungeons.forEach((d,i)=>{
+      const key=String(d.id||d.name);
+      const list=grouped.get(key)||[];
+      html+='<details class="enemy-dungeon-collapsible" data-dungeon-id="'+esc(d.id||'')+'" '+(i===0?'open':'')+'>';
+      html+='<summary><div class="enemy-dungeon-summary">';
+      html+='<span class="rank'+dungeonRank(i)+'">★'+(i+1)+'</span> <h3>'+esc(d.name||'名称未設定')+'</h3>';
+      html+='<span class="enemy-count">'+list.length+'体</span>';
+      html+='<p><b>系統効果：</b>'+esc(d.effect||'なし')+'</p>'+'<p><b>獲得経験値：</b>'+esc(d.exp||'未設定')+'</p>';
+      html+='<p class="small">'+esc(d.desc||'—')+'</p>';
+      if(d.strategy)html+='<p class="small"><b>攻略：</b>'+esc(d.strategy)+'</p>';
+      html+='</div></summary><div class="enemy-dungeon-body"><div class="enemy-cards">';
+      if(list.length) html+=list.map(enemyCard).join('');
+      else html+='<div class="enemy-card"><p class="muted">このダンジョンに登録されている敵はいません。</p></div>';
+      html+='</div></div></details>';
+    });
+
+    if(orphans.length){
+      html+='<details class="enemy-dungeon-collapsible" open><summary><div class="enemy-dungeon-summary"><h3>未所属の敵</h3><span class="enemy-count">'+orphans.length+'体</span><p class="small">敵CRUDには登録されていますが、所属ダンジョンが一致していません。</p></div></summary><div class="enemy-dungeon-body"><div class="enemy-cards">'+orphans.map(enemyCard).join('')+'</div></div></details>';
+    }
+    if(!dungeons.length) html='<div class="notice info">ダンジョンCRUDに登録されたダンジョンがありません。</div>';
+    root.innerHTML=html;
+  }
+
+  function start(){
+    render(true);
+    window.addEventListener('storage',()=>render(true));
+    window.addEventListener('untroddent-crud-updated',()=>render(true));
+    // 同一タブでlocalStorageを更新した場合にも即時同期できるよう軽い監視を行う。
+    setInterval(()=>render(false),700);
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start);
+  else start();
+})();
+</script>
+<script>
+/* ダンジョン閲覧者表示を「ダンジョン完全CRUD」のデータへ完全同期する統合レンダラー */
+(function(){
+  const INITIAL=[
+    {id:'d1',name:'ビギナーダンジョン',effect:'ドロップ率の分母が1減る',desc:'序盤向けのダンジョン。',strategy:'基本的な敵から戦闘に慣れる。'},
+    {id:'d2',name:'ノービスダンジョン',effect:'獲得ゴールドが15%上がる',desc:'ビギナーから一段階上のダンジョン。',strategy:'敵の攻撃を見ながら各個撃破する。'},
+    {id:'d3',name:'ホーリーダンジョン',effect:'獲得ガウルがたまに1増える',desc:'経験値稼ぎにも向くダンジョン。',strategy:'敵の属性や特殊攻撃に注意する。'},
+    {id:'d4',name:'エキスパートダンジョン',effect:'経験値が2倍になる',desc:'高難度のダンジョン。',strategy:'強力な敵への対策を準備する。'},
+    {id:'d5',name:'アンドロデンダンジョン',effect:'なし',desc:'最上位クラスのダンジョン。',strategy:'ボス戦を想定した装備と編成を準備する。'}
+  ];
+  const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  function getData(){
+    let saved=null;
+    try{ saved=JSON.parse(localStorage.getItem('untroddentWikiDungeonCRUD_v1')||'null'); }catch(_){ }
+    if(Array.isArray(saved) && saved.length) return saved;
+    const embedded=window.__UNTRODDENT_DUNGEON_DATA__;
+    if(Array.isArray(embedded) && embedded.length) return embedded;
+    const pub=window.UNTRODDENT_VIEWER_DATA;
+    if(pub && Array.isArray(pub.dungeons) && pub.dungeons.length) return pub.dungeons;
+    return INITIAL;
+  }
+  const XP={d1:'1,620 XP',d2:'4,860 XP',d3:'16,200 XP',d4:'36,450 XP',d5:'24,350 XP'};
+  function render(){
+    const sec=document.getElementById('dungeons');
+    if(!sec)return;
+    const data=getData().filter(x=>x && x.name);
+    if(!data.length)return;
+    const oldTable=sec.querySelector('table');
+    const rankClasses=['','', '', 'ex','boss'];
+    let html='<h2>1. ダンジョン'+data.length+'種類</h2>';
+    html+='<p class="muted">攻略が簡単な順に、'+data.map(x=>esc(x.name.replace(/ダンジョン$/,''))).join(' → ')+'と覚えます。</p>';
+    data.forEach((d,i)=>{
+      const rankClass=rankClasses[i]||'';
+      const rank=rankClass?`<span class="rank ${rankClass}">★${i+1}</span>`:`<span class="rank">★${i+1}</span>`;
+      html+=`<div class="dungeon" data-dungeon-id="${esc(d.id||'')}"><h3>${rank} ${esc(d.name)}</h3><p>${esc(d.desc||'—')}<br/><b>系統効果：</b>${esc(d.effect||'なし')}<br/><b>獲得経験値：</b>${esc(XP[String(d.id||'')]||'未設定')}</p><p class="small"><b>攻略：</b>${esc(d.strategy||'—')}</p></div>`;
+    });
+    html+='<table><tr><th>種類</th><th>敵</th><th>獲得経験値</th><th>攻略の位置づけ</th><th>系統効果</th></tr>';
+    data.forEach(d=>{
+      const short=String(d.name).replace(/ダンジョン$/,'');
+      html+=`<tr><td>${esc(short)}</td><td data-dungeon-enemies="${esc(d.id||d.name)}">—</td><td>${esc(XP[String(d.id||'')]||'未設定')}</td><td>${esc(d.strategy||'—')}</td><td>${esc(d.effect||'なし')}</td></tr>`;
+    });
+    html+='</table>';
+    sec.innerHTML=html;
+    renderEnemyNames(data);
+  }
+  function renderEnemyNames(dungeons){
+    const enemies=(()=>{try{return JSON.parse(localStorage.getItem('untroddentWikiEnemyCRUD_v5')||'null')||window.__UNTRODDENT_CRUD_DATA__||[]}catch(_){return window.__UNTRODDENT_CRUD_DATA__||[]}})();
+    if(!Array.isArray(enemies))return;
+    document.querySelectorAll('[data-dungeon-enemies]').forEach(cell=>{
+      const key=cell.getAttribute('data-dungeon-enemies');
+      const d=dungeons.find(x=>String(x.id||x.name)===key);
+      if(!d)return;
+      const list=enemies.filter(e=>String(e.dungeonId||e.dungeon||'')===String(d.id) || (!e.dungeonId && String(e.dungeon||'')===String(d.name)));
+      if(list.length)cell.textContent=list.map(e=>e.name||'—').join('、');
+    });
+  }
+  function install(){
+    render();
+    // 管理者画面でCRUD保存後も即時反映
+    window.renderDungeonViewer=render;
+    window.renderDungeons=render;
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+  window.addEventListener('storage',e=>{if(e.key==='untroddentWikiDungeonCRUD_v1'||e.key==='untroddentWikiEnemyCRUD_v5')render();});
+})();
+</script>
+<script id="untroddent-published-data" type="application/json">{"version":"2.0","updatedAt":"2026-08-28T00:00:00.000Z","dungeons":[],"enemies":[{"id":"current-beginner-slime","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"スライム","skill":"—","drops":[{"name":"スライムマント","rate":"1/3","effect":"【防具】DEF+20 やわらかいマント（効果なし）"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"スライムマント","rate":"1/3","effect":"【防具】DEF+20 やわらかいマント（効果なし）"},{"id":"current-beginner-blackbat","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"くろいコウモリ","skill":"—","drops":[{"name":"くろいヘルメット","rate":"1/5","effect":"【防具】DEF+50 坑道でも怖くない（効果なし）"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"くろいヘルメット","rate":"1/5","effect":"【防具】DEF+50 坑道でも怖くない（効果なし）"},{"id":"current-beginner-whitebat","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"しろいコウモリ","skill":"—","drops":[{"name":"あかるいライト","rate":"1/8","effect":"【武器】ATK+20。1ターンごとに1/15の確率で敵を行動不能にする。強化値ごとに1/(15-0.5×強化値)の確率で相手を麻痺させる。1/3が上限。"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"あかるいライト","rate":"1/8","effect":"【武器】ATK+20。1ターンごとに1/15の確率で敵を行動不能にする。強化値ごとに1/(15-0.5×強化値)の確率で相手を麻痺させる。1/3が上限。"},{"id":"current-beginner-marmotcat","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"モルモットっぽいねこ","skill":"—","drops":[{"name":"爪とひげ","rate":"1/5","effect":"【武器】ATK+50 するどい爪とひげ（効果なし）"}],"strategy":"—","hp":"90","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"爪とひげ","rate":"1/5","effect":"【武器】ATK+50 するどい爪とひげ（効果なし）"},{"id":"current-beginner-horse","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"馬刺しになるはずだった馬","skill":"—","drops":[],"strategy":"—","hp":"126","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-beginner-robot","dungeon":"ビギナーダンジョン","dungeonId":"d1","name":"こわれたロボット","skill":"—","drops":[{"name":"スタンガン","rate":"1/6","effect":"【武器】ATK+150 『ボル○ッカー』。1ターンごとに1/10の確率で敵全体に攻撃。強化値に確率は依存しない。"}],"strategy":"—","hp":"144","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"スタンガン","rate":"1/6","effect":"【武器】ATK+150 『ボル○ッカー』。1ターンごとに1/10の確率で敵全体に攻撃。強化値に確率は依存しない。"},{"id":"current-novice-fatdog","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"ふとったいぬ","skill":"【ステータス？くれてやる。】発動率1/1。ランダムでプレイヤーのステータスのどれかが1~20上がる。","drops":[],"strategy":"—","hp":"161","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-novice-tutancat","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"ツタンカー麺","skill":"—","drops":[{"name":"どんぶり","rate":"1/15","effect":"【装身具】獲得ゴールドが2倍になる"}],"strategy":"—","hp":"230","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"どんぶり","rate":"1/15","effect":"【装身具】獲得ゴールドが2倍になる"},{"id":"current-novice-marie","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"マリーアンドネット","skill":"【私と一緒に踊りましょう】スキル発動率1/10。獲得ゴールドが1.5倍になる。","drops":[],"strategy":"—","hp":"","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-novice-zombie","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"歩く死体","skill":"—","drops":[],"strategy":"—","hp":"230","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-novice-captain","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"船の船長","skill":"—","drops":[{"name":"救命胴衣","rate":"1/20","effect":"【防具】DEF+500 これを着て（効果はなし）"}],"strategy":"—","hp":"345","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"救命胴衣","rate":"1/20","effect":"【防具】DEF+500 これを着て（効果はなし）"},{"id":"current-novice-sailor","dungeon":"ノービスダンジョン","dungeonId":"d2","name":"船員","skill":"—","drops":[],"strategy":"—","hp":"230","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"—","rate":"—","effect":"—"},{"id":"current-holy-paladin","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"パラディン","skill":"【詠唱】スキル発動率1/1。相手に魔法ダメージ","drops":[{"name":"魔術師のコート","rate":"1/35","effect":"【防具】DEF+3000。一度体力が全体ステータスの30％以下になった時、全回復する。"}],"strategy":"—","hp":"1,100","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"魔術師のコート","rate":"1/35","effect":"【防具】DEF+3000。一度体力が全体ステータスの30％以下になった時、全回復する。"},{"id":"current-holy-arthur","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"英雄アーサー","skill":"【剣の奏でるハーモニー】スキル発動率1/1。相手に物理ダメージ","drops":[{"name":"エクスカリバー","rate":"1/333","effect":"【武器】ATK+7777。1ターン目に自分に英雄状態を付与した後、1/(17-1×強化値)（最大1/1）の確率で相手の最大HPを（最大HPの50〜50＋強化値×3）の中のランダムなパーセントで（最大95％）削る。どんな手段でも相手はこれを回復できない。削られた分の相手のHPバーは白黒で削られる。また、英雄状態を解かれると、相手のHPを削ることはできない。"}],"strategy":"—","hp":"2,640","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"エクスカリバー","rate":"1/333","effect":"【武器】ATK+7777。1ターン目に自分に英雄状態を付与した後、1/(17-1×強化値)（最大1/1）の確率で相手の最大HPを（最大HPの50〜50＋強化値×3）の中のランダムなパーセントで（最大95％）削る。どんな手段でも相手はこれを回復できない。削られた分の相手のHPバーは白黒で削られる。また、英雄状態を解かれると、相手のHPを削ることはできない。"},{"id":"current-holy-thor","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"雷神ソー","skill":"【怒りのいかづち】1/5の確率で即死","drops":[{"name":"ムジョルニア","rate":"1/100","effect":"【武器】ATK+8000。全体攻撃になる。また、1/9の確率で雷を呼び起こし敵全体に大ダメージ、また、英雄状態を解くことができる。"}],"strategy":"—","hp":"2,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"ムジョルニア","rate":"1/100","effect":"【武器】ATK+8000。全体攻撃になる。また、1/9の確率で雷を呼び起こし敵全体に大ダメージ、また、英雄状態を解くことができる。"},{"id":"current-holy-yamata","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"八岐大蛇","skill":"【上戸（笑）】自身の攻撃力を毎ターン2倍にする","drops":[{"name":"天叢雲剣","rate":"1/500","effect":"【武器】ATK+4321"}],"strategy":"—","hp":"—","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"天叢雲剣","rate":"1/500","effect":"【武器】ATK+4321"},{"id":"current-holy-chronos","dungeon":"ホーリーダンジョン","dungeonId":"d3","name":"クロノス","skill":"【TIME】1/3の確率で自身に前のターンで与えられた効果・ダメージを打ち消す","drops":[{"name":"ハルパー","rate":"1/333","effect":"【武器】ATK+800"}],"strategy":"—","hp":"—","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"ハルパー","rate":"1/333","effect":"【武器】ATK+800"},{"id":"current-expert-red","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"レッドドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"炎の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"炎の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-blue","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ブルードラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"氷の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"氷の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-white","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ホワイトドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"光の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"光の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-black","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ブラックドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"闇の翼","rate":"1/30","effect":"合成素材"}],"strategy":"—","hp":"3,200","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"闇の翼","rate":"1/30","effect":"合成素材"},{"id":"current-expert-ghost","dungeon":"エキスパートダンジョン","dungeonId":"d4","name":"ゴーストドラゴン","skill":"【仲間を呼ぶ】毎ターンチビドラゴンを召喚する。","drops":[{"name":"ドラゴンのたましい","rate":"1/50","effect":"合成素材"}],"strategy":"—","hp":"4,480","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"ドラゴンのたましい","rate":"1/50","effect":"合成素材"},{"id":"current-android-garbled","dungeon":"アントロデンダンジョン","dungeonId":"d5","name":"縺ｫ繧?メ繝オル","skill":"【ドッペルゲンガー】自分と全く同じステータスの敵になる。","drops":[{"name":"チタンのペンダント","rate":"1/99","effect":"【装身具】洗礼された数だけ強くなる。（1.1の(洗礼回数)乗分、全ステータスが強化される）"}],"strategy":"—","hp":"300","atk":"","def":"","spd":"","exp":"","gold":"","image":"","drop":"チタンのペンダント","rate":"1/99","effect":"【装身具】洗礼された数だけ強くなる。（1.1の(洗礼回数)乗分、全ステータスが強化される）"}]}</script><script async="" data-goatcounter="https://tsuritetsu9306.goatcounter.com/count" id="untroddent-goatcounter-script" src="https://gc.zgo.at/count.js"></script><script id="untroddent-wiki-ai-script">
+(()=>{
+const API_URL="https://YOUR-WORKER.workers.dev";
+const css=`#uwa-btn{position:fixed;right:18px;bottom:18px;z-index:99999;border:1px solid #30463d;border-radius:999px;padding:12px 16px;background:#101b17;color:#e9eee9;font-weight:800;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.35)}#uwa-panel{position:fixed;right:18px;bottom:72px;z-index:99999;width:min(390px,calc(100vw - 36px));height:min(560px,72vh);display:none;flex-direction:column;background:#101b17;color:#e9eee9;border:1px solid #30463d;border-radius:14px;box-shadow:0 15px 50px rgba(0,0,0,.45);overflow:hidden;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif}#uwa-head{padding:12px 14px;border-bottom:1px solid #30463d;display:flex;justify-content:space-between;font-weight:900}#uwa-close{background:none;border:0;color:#e9eee9;font-size:22px;cursor:pointer}#uwa-msg{flex:1;overflow:auto;padding:12px;background:#0b120f}.uwa-m{max-width:88%;padding:9px 11px;margin:7px 0;border-radius:11px;white-space:pre-wrap;line-height:1.55}.uwa-u{margin-left:auto;background:#17251f}.uwa-a{margin-right:auto;background:#101b17;border:1px solid #30463d}#uwa-form{display:flex;gap:7px;padding:8px;border-top:1px solid #30463d}#uwa-input{flex:1;resize:none;min-width:0;background:#08100d;color:#e9eee9;border:1px solid #30463d;border-radius:9px;padding:8px;font:inherit}#uwa-send{border:1px solid #30463d;border-radius:9px;background:#17251f;color:#e9eee9;padding:0 12px;font-weight:800}`;
+const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+const b=document.createElement('button');b.id='uwa-btn';b.textContent='💬 Wiki AI';
+const p=document.createElement('section');p.id='uwa-panel';p.innerHTML='<div id="uwa-head"><span>アントロデン Wiki AI</span><button id="uwa-close">×</button></div><div id="uwa-msg"><div class="uwa-m uwa-a">アントロデンWikiについて質問してください。</div></div><form id="uwa-form"><textarea id="uwa-input" rows="2" placeholder="例：ホーリーダンジョンの敵を教えて"></textarea><button id="uwa-send">送信</button></form>';
+document.body.append(b,p);const msgs=p.querySelector('#uwa-msg'),inp=p.querySelector('#uwa-input');
+const add=(t,c)=>{const e=document.createElement('div');e.className='uwa-m '+c;e.textContent=t;msgs.appendChild(e);msgs.scrollTop=msgs.scrollHeight;return e};
+b.onclick=()=>{p.style.display='flex';inp.focus()};p.querySelector('#uwa-close').onclick=()=>p.style.display='none';
+p.querySelector('#uwa-form').onsubmit=async e=>{e.preventDefault();const q=inp.value.trim();if(!q)return;add(q,'uwa-u');inp.value='';const a=add('検索中…','uwa-a');try{const r=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})});const d=await r.json();a.textContent=d.answer||d.error||'回答を取得できませんでした。'}catch(_){a.textContent='AIサーバーに接続できません。API URLを確認してください。'}};
+})();
+</script>
+</body></html>
